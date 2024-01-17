@@ -46,7 +46,7 @@ export const Navbar = () => {
         pl="20"
         pr="20"
         h="10vh"
-        w="100vw"
+        w="100%"
         className={styles.navbaronly}
       >
         <Text

@@ -9,7 +9,7 @@ export const NewCollection = () => {
     return (
         <>
         <Box m="30px">
-            <Box w="90%" m="auto">
+            <Box w="88%" m="auto">
 
                 <Flex justifyContent={"space-between"} alignItems={"center"}>
 
