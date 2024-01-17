@@ -1,0 +1,10 @@
+
+
+.navbaronly{
+    /* border: solid; */
+    background: rgb(20,20,20);
+    background: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgb(26, 26, 26) 52%, rgb(30, 30, 30) 63%, rgb(33, 33, 33) 72%, rgba(31,31,31,1) 86%);
+    color: white;
+    position: fixed;
+    /* box-shadow: rgba(37, 37, 37, 0.2) 0px 8px 24px; */
+}
