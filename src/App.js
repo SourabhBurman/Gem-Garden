@@ -4,6 +4,7 @@ import { Navbar } from './Components/Navbar';
 import { AllRoutes } from './Pages/AllRoutes';
 import Abouts from './Components/Abouts';
 import Bestseller from './Components/Bestseller';
+import {Gifts} from './Components/Gifts';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Bestseller/>
       <Abouts/>
       <Footer/>
+      <Gifts />
+      {/* <Footer/> */}
     </div>
   );
 }
