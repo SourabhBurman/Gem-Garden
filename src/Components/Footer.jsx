@@ -7,10 +7,32 @@ const Footer = () => {
       <div className={styles.foot_app_Title__zA_uX}>
         <h2>GEM GARDEN</h2>
         <div className={styles.foot_social_media_Div__djhh7}>
-          <a href="https://www.facebook.com/hacked"><img className={styles.foot_social_media__hGU5z} src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" title="facebook" alt="Facebook"/></a> 
-          <img className={styles.foot_social_media__hGU5z} src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" title="Instagram" alt="Instagram"/>
-          <img className={styles.foot_social_media__hGU5z} src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Pinterest2_svg-512.png" title="Pinterest" alt="Pinterest"/>
-          <img className={styles.foot_social_media__hGU5z} src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" title="Twitter" alt="Twitter"/>
+          <a href="https://www.facebook.com/hacked">
+            <img
+              className={styles.foot_social_media__hGU5z}
+              src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png"
+              title="facebook"
+              alt="Facebook"
+            />
+          </a>
+          <img
+            className={styles.foot_social_media__hGU5z}
+            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png"
+            title="Instagram"
+            alt="Instagram"
+          />
+          <img
+            className={styles.foot_social_media__hGU5z}
+            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Pinterest2_svg-512.png"
+            title="Pinterest"
+            alt="Pinterest"
+          />
+          <img
+            className={styles.foot_social_media__hGU5z}
+            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png"
+            title="Twitter"
+            alt="Twitter"
+          />
         </div>
       </div>
       <div className={styles.foot_contacts__yLyoe}>
@@ -29,7 +51,11 @@ const Footer = () => {
       </div>
       <div className={styles.foot_email_Section__qc_3a}>
         <h1>Discover the latest collections, news, and exclusive launches</h1>
-        <input className={styles.foot_mailInput__9Ia1} type="email" placeholder="Enter your e-mail address" />
+        <input
+          className={styles.foot_mailInput__9Ia1}
+          type="email"
+          placeholder="Enter your e-mail address"
+        />
         <hr />
         <div className={styles.foot_policy__FkJCy}>
           <p>Legal notice</p>

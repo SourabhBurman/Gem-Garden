@@ -1,10 +1,12 @@
-import React from 'react';
-import styles from "./About.module.css";
+import React from "react";
+import styles from "./Abouts.module.css";
 
-
-const About = () => {
+const Abouts = () => {
   return (
-    <section className={styles.HomePage_sectionP1__kiHi} id={styles.HomePage_about__KBFWW}>
+    <section
+      className={styles.HomePage_sectionP1__kiHi}
+      id={styles.HomePage_about__KBFWW}
+    >
       <div className={styles.HomePage_firstDiv__2J3gv}>
         <div className={styles.HomePage_frstDiv1}>
           <h1>About</h1>
@@ -24,10 +26,13 @@ const About = () => {
           <span>OUR STORES</span>
         </div>
         <div className={styles.HomePage_frstDiv2}>
-          <span >GG</span>
+          <span>GG</span>
         </div>
       </div>
-      <div className={styles.HomePage_secondDiv__lALhm } classname={styles.HomePage_sectionM1__mmrYJ}>
+      <div
+        className={styles.HomePage_secondDiv__lALhm}
+        classname={styles.HomePage_sectionM1__mmrYJ}
+      >
         <div className={styles.divimge}>
           <img
             src="https://gem-garden-jewelry-store.vercel.app/static/media/meeting.c96f8779b2d55da20832.png"
@@ -44,7 +49,4 @@ const About = () => {
   );
 };
 
-export default About;
-
-
-
+export default Abouts;
