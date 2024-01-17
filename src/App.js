@@ -2,6 +2,8 @@ import './App.css';
 import Footer from './Components/Footer';
 import { Navbar } from './Components/Navbar';
 import { AllRoutes } from './Pages/AllRoutes';
+import Abouts from './Components/Abouts';
+import Bestseller from './Components/Bestseller';
 import {Gifts} from './Components/Gifts';
 
 function App() {
@@ -10,6 +12,9 @@ function App() {
     
       <Navbar />
       <AllRoutes />
+      <Bestseller/>
+      <Abouts/>
+      <Footer/>
       <Gifts />
       {/* <Footer/> */}
     </div>

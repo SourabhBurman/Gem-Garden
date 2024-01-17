@@ -3,24 +3,13 @@
     color: #fff;
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 10.5% 17% 36%;
-    gap: 5%;
-    padding: 50px 50px 90px 90px;
+    grid-template-columns: 18% 14% 20% 38%;
+    gap: 2.5%;
+    /* padding: 50px 50px 90px 90px; */
+    padding: 4% 2% 7% 6%;
 }
 
-* {
-    font-family: Nunito Sans,sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-}
-* {
-    /* color: #000; */
-    text-decoration: none;
-}
-* {
-    box-sizing: border-box;
-}
+
 
 h2, h3 {
     margin-bottom: 0;
@@ -29,7 +18,7 @@ h2, h3 {
    
 }
 
-* {
+/* * {
     font-family: Nunito Sans,sans-serif;
     font-size: 1rem;
     margin: 0;
@@ -42,7 +31,7 @@ h2, h3 {
 }
 * {
     box-sizing: border-box;
-}
+} */
 
 h2 {
     display: block;
@@ -108,15 +97,15 @@ img {
 } */
 .foot_contacts__yLyoe p{
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .foot_jewelry_Type__p6DGh p{
     padding-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .foot_email_Section__qc_3a p{
     padding-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .foot_email_Section__qc_3a input{
@@ -144,7 +133,7 @@ img {
     
 
     .foot_footerComponent__BtWvP {
-         /* border: 10px solid red;  */
+          /* border: 1px solid red;   */
         background-color: #2e2c2d;
         color: #fff;
         width: 100%;
@@ -155,8 +144,9 @@ img {
         grid-template-areas: "bottom bottom bottom bottom "
                              "top top top top ";
       /* grid-template-columns: repeat(1, 1fr); */
-        padding: 50px 5px 50px 5px;
-        margin: 0px;
+        /* padding: 50px 5px 50px 5px; */
+        margin: 0%;
+       
         /* padding: 50px 50px 90px 90px; */
     }
 
