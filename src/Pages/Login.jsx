@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import blackbgEar from "../Assets/black.jpg";
-import "animate.css";
+// import blackbgEar from "../Assets/black.jpg";
+// import "animate.css";
 import { color, useToast } from "@chakra-ui/react";
 import {
   Flex,
@@ -19,9 +19,9 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
-import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+// import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../Redux/Authentication/action";
+// import { login } from "../Redux/Authentication/action";
 // import { login } from '../Redux/Authentication/action'
 
 export const Login = () => {
@@ -31,7 +31,7 @@ export const Login = () => {
   const [submissiondisbled, setSubmissiondisbled] = useState(false);
   const toast = useToast();
   const location = useLocation()
-  const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
+  // const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
   const [logindata, setLoginData] = useState({
     email: "",
     password: "",
@@ -52,45 +52,45 @@ export const Login = () => {
       return;
     }
 
-    dispatch(login(logindata));
+    // dispatch(login(logindata));
   };
 
-  useEffect(()=>{
-    if (token) {
-      toast({
-        title: "Success",
-        description: "User LoggedIn Successful",
-        status: "success",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-      localStorage.setItem("user-token",token)
-      setTimeout(() => {
-        navigate("/");
-      }, 4000);
-      setLoginData({email:"",password:""});
-      return;
-    } 
-    if(errMsg){
-      toast({
-        title: "Failed",
-        description: errMsg,
-        status: "error",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-      return
-    }
-  },[isAuth,token,errMsg])
+  // useEffect(()=>{
+  //   if (token) {
+  //     toast({
+  //       title: "Success",
+  //       description: "User LoggedIn Successful",
+  //       status: "success",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //     localStorage.setItem("user-token",token)
+  //     setTimeout(() => {
+  //       navigate("/");
+  //     }, 4000);
+  //     setLoginData({email:"",password:""});
+  //     return;
+  //   } 
+  //   if(errMsg){
+  //     toast({
+  //       title: "Failed",
+  //       description: errMsg,
+  //       status: "error",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //     return
+  //   }
+  // },[isAuth,token,errMsg])
 
   return (
     <>
       <Box
         position={"relative"}
         style={{
-          backgroundImage: `url(${blackbgEar})`,
+          // backgroundImage: `url(${blackbgEar})`,
           //  backgroundRepeat:"no-repeat",
           backgroundSize: "cover",
         }}
@@ -108,7 +108,7 @@ export const Login = () => {
         >
           <Flex
             style={{
-              backgroundImage: `url(${blackbgEar})`,
+              // backgroundImage: `url(${blackbgEar})`,
               //  backgroundRepeat:"no-repeat",
               backgroundSize: "cover",
             }}
@@ -193,7 +193,7 @@ export const Login = () => {
                             setShowPassword((showPassword) => !showPassword)
                           }
                         >
-                          {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                          {/* {showPassword ? <ViewIcon /> : <ViewOffIcon />} */}
                         </Button>
                       </InputRightElement>
                     </InputGroup>
@@ -239,7 +239,7 @@ export const Login = () => {
                         fontWeight={"600"}
                       >
                         {" "}
-                        Admin Login <ArrowForwardIcon />{" "}
+                        {/* Admin Login <ArrowForwardIcon />{" "} */}
                       </Link>
                     </Text>
                   </Stack>
