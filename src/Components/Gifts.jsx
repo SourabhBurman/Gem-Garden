@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../gift.css';
 import gift from '../giftBox.png';
-import { FormErrorMessage, FormHelperText, useToast } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 import {
     Modal,
     ModalOverlay,
@@ -29,12 +29,6 @@ export const Gifts = () => {
 
     const handleInputChange = (e) => setInput(e.target.value);
     
-    // var format = /@./;
-    // let isError = true;
-    const isError = input === '';
-    // if (input === '' && !input.match(format)){
-    //     isError = false;
-    // }
 
     return( 
     <>
@@ -64,19 +58,11 @@ export const Gifts = () => {
                 <ModalHeader>SEND GIFT CARD</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <h1>Send a gift card to your loved on , and put a smile on their face..</h1>
+                    <h1>Send a gift card to your Friends and family, and put a smile on their face..</h1>
                     <form>
-                        <FormControl isInvalid={isError}>
+                        <FormControl >
                             <FormLabel>Enter Your Friends Email</FormLabel>
                             <Input type='email' value={input} onChange={handleInputChange}/>
-                            {isError ? (
-                                <FormErrorMessage>Valid Email is required.</FormErrorMessage>
-                                
-                            ) : (
-                                <FormHelperText>
-                                  Enter the email you'd like to send the gift card on.
-                                </FormHelperText>
-                            )}
                         </FormControl>
                     </form>
                 </ModalBody>
@@ -86,23 +72,18 @@ export const Gifts = () => {
                     Cancel
                     </Button>
         
-                    {isError ? (
-                                <Button type="submit" colorScheme='red' disabled={true}>SEND</Button>
-                            ) : (
-                                <Button type='submit' colorScheme='blue'
-                                disabled = {true}
-                                onClick={() =>
-                                toast({
-                                title: 'GIFT CARD SEND SUCCESSFULLY..',
-                                description: "We've send the gift card..",
-                                position: 'center',
-                                status: 'success',
-                                duration: 3000,
-                                isClosable: true,
-                                })
-                            } 
-                            >Send</Button>
-                            )}
+                    <Button type='submit' colorScheme='blue'
+                      onClick={() =>
+                        toast({
+                          title: 'GIFT SEND SUCCESSFULLY',
+                          description: "We've send your gift.",
+                          status: 'success',
+                          duration: 5000,
+                          isClosable: true,
+                        })
+                      }
+                    >Send</Button>
+                           
                 </ModalFooter>
             </ModalContent>
       </Modal>

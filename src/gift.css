@@ -8,7 +8,7 @@
     justify-content: space-between;
     margin-bottom: 0;
     width: 95%;
-    height: 550px;
+    height: 500px;
     margin: 0 2% 0 2%;
 }
 .Gift img{
@@ -17,12 +17,13 @@
 }
 .giftText{
     color: white;
-    /* background-color: brown; */
     width: 500px;
     margin-right: 100px;
     text-align: start;
 }
-
+.giftText p,b,span{
+    color: white;
+}
 
 /* Media Query for Gift */
 
