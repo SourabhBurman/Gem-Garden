@@ -1,0 +1,95 @@
+body {
+    background: #111315;
+    line-height: 26px;
+    margin: 0;
+  }
+  .head{
+    text-align: center;
+    margin-top: -50px;
+    /* background-color: #f45532; */
+    color: white;
+  }
+  .para{
+    color: white;
+    max-width: 400px;
+    text-align: center;
+    margin-left: 460px;
+  }
+  
+  
+  .ContactForm{
+    /* background-color: #f45532; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .App {
+    height: 75vh;
+    margin-top: 15vh;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  /* input[type=text]{
+    color: white;
+  } */
+  input , textarea{
+    background-color: #1a1d1f;
+    border:1px solid white;
+    border-radius: 5px;
+    color: white;
+  }
+  button{
+    border:1px solid white;
+  }
+  
+  .formRow {
+    margin: 20px 0 20px 10px;
+    display: flex;
+    column-gap: 20px;
+  
+  }
+  
+  .formInput {
+    padding: 15px 10px;
+    /* margin-left: 20px; */
+    width: 400px;
+    margin-top: 20px;
+  }
+  .contactForm{
+    /* background-color:black; */
+    align-content: center;
+    width: 885px;
+  }
+  .sub{
+    width: 840px;
+  }
+  .message{
+    width: 840px;
+    height: 100px;
+  }
+  
+  .errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-left: 20px;
+    padding: 0;
+  }
+  
+  .submit-btn {
+    padding: 15px 50px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    background-color:#008080;
+    color: white;
+    margin-left: 375px;
+  }
+  
+  @media (max-width: 768px) {
+    .submit-message {
+      width: 125px;
+      margin-left: 200px;
+    }
+  }
