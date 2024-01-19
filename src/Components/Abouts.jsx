@@ -26,7 +26,7 @@ const Abouts = () => {
           <span>OUR STORES</span>
         </div>
         <div className={styles.HomePage_frstDiv2}>
-          <span>GG</span>
+          <h1>GG</h1>
         </div>
       </div>
       <div

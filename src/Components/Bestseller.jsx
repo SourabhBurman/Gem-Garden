@@ -44,7 +44,10 @@ function Bestseller() {
         pr="5%"
         pb="7%"
       >
-        <Card maxW="sm">
+        <Card
+          maxW="sm"
+          _hover={{ transform: "scale(1.05)", transition: "transform 0.4s" }}
+        >
           <CardBody>
             <Image
               src="https://gem-garden-jewelry-store.vercel.app/static/media/card5.471f0f73c03a3ce42177.png"
@@ -58,7 +61,10 @@ function Bestseller() {
             </Text>
           </CardBody>
         </Card>
-        <Card maxW="sm">
+        <Card
+          maxW="sm"
+          _hover={{ transform: "scale(1.05)", transition: "transform 0.4s" }}
+        >
           <CardBody>
             <Image
               src="https://gem-garden-jewelry-store.vercel.app/static/media/card6.cdfc389c353e0a1a95c5.png"
@@ -72,7 +78,10 @@ function Bestseller() {
             </Text>
           </CardBody>
         </Card>
-        <Card maxW="sm">
+        <Card
+          maxW="sm"
+          _hover={{ transform: "scale(1.05)", transition: "transform 0.4s" }}
+        >
           <CardBody>
             <Image
               src="https://gem-garden-jewelry-store.vercel.app/static/media/card7.3abfa35a89cf47b097ae.png"
@@ -86,7 +95,10 @@ function Bestseller() {
             </Text>
           </CardBody>
         </Card>
-        <Card maxW="sm">
+        <Card
+          maxW="sm"
+          _hover={{ transform: "scale(1.05)", transition: "transform 0.4s" }}
+        >
           <CardBody>
             <Image
               src="https://mygemma.com/cdn/shop/products/122588-fv_1200x.jpg?v=1659050494"
