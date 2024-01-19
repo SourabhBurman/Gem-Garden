@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import blackbgEar from "../Assets/black.jpg";
-import "animate.css";
-import { color, useToast } from "@chakra-ui/react";
 import {
   Flex,
   Box,
@@ -18,10 +15,11 @@ import {
   Text,
   useColorModeValue,
   Link,
+  useToast,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../Redux/Authentication/action";
+// import { login } from "../Redux/Authentication/action";
 // import { login } from '../Redux/Authentication/action'
 
 export const Login = () => {
@@ -31,7 +29,7 @@ export const Login = () => {
   const [submissiondisbled, setSubmissiondisbled] = useState(false);
   const toast = useToast();
   const location = useLocation()
-  const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
+  // const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
   const [logindata, setLoginData] = useState({
     email: "",
     password: "",
@@ -51,46 +49,13 @@ export const Login = () => {
       });
       return;
     }
-
-    dispatch(login(logindata));
   };
-
-  useEffect(()=>{
-    if (token) {
-      toast({
-        title: "Success",
-        description: "User LoggedIn Successful",
-        status: "success",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-      localStorage.setItem("user-token",token)
-      setTimeout(() => {
-        navigate("/");
-      }, 4000);
-      setLoginData({email:"",password:""});
-      return;
-    } 
-    if(errMsg){
-      toast({
-        title: "Failed",
-        description: errMsg,
-        status: "error",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-      return
-    }
-  },[isAuth,token,errMsg])
-
   return (
     <>
       <Box
         position={"relative"}
         style={{
-          backgroundImage: `url(${blackbgEar})`,
+          // backgroundImage: `url(${login})`,
           //  backgroundRepeat:"no-repeat",
           backgroundSize: "cover",
         }}
@@ -108,7 +73,7 @@ export const Login = () => {
         >
           <Flex
             style={{
-              backgroundImage: `url(${blackbgEar})`,
+              // backgroundImage: `url(${blackbgEar})`,
               //  backgroundRepeat:"no-repeat",
               backgroundSize: "cover",
             }}
@@ -147,7 +112,6 @@ export const Login = () => {
                       borderTop={"none"}
                       focusBorderColor="none"
                       placeholder={"Your email address"}
-                      // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                       _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                       _focus={{
                         bg: "whiteAlpha.300",
@@ -171,7 +135,6 @@ export const Login = () => {
                         borderTop={"none"}
                         focusBorderColor="none"
                         placeholder={"Your password"}
-                        // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                         _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                         _focus={{
                           bg: "whiteAlpha.300",
@@ -206,13 +169,11 @@ export const Login = () => {
                         background:
                           "linear-gradient(to top left, #171616 100%, #363431 51%)",
                       }}
-                      // bgGradient='linear(to-r, #171616, #363431)'
                       loadingText="Submitting"
                       size="lg"
                       bg={"blue.400"}
                       color={"white"}
                       _hover={{
-                        // bg: 'blue.500',
                         bgGradient: "linear(to-r,  #363431,#171616)",
                         border: "1px solid #FFB300 ",
                         color: "#FFB300",
@@ -238,8 +199,6 @@ export const Login = () => {
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >
-                        {" "}
-                        Admin Login <ArrowForwardIcon />{" "}
                       </Link>
                     </Text>
                   </Stack>
