@@ -91,9 +91,13 @@ section {
 }
 
 
-/* .HomePage_frstDiv2{
-  
-}  */
+ .HomePage_frstDiv2 >h1{
+   font-size: 270px;
+    color: rgb(133, 131, 131);
+}  
+/* .HomePage_frstDiv2>span{
+    font-size: 200px;
+} */
 
 #HomePage_about__KBFWW .HomePage_firstDiv__2J3gv>div:first-child {
     text-align: start;
