@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
-import blackbg from "../Assets/body-bg-free-img.jpg";
-import blackbgEar from "../Assets/black.jpg";
-import "animate.css";
-import { color, useToast } from "@chakra-ui/react";
 import {
   Flex,
   Box,
@@ -20,11 +15,12 @@ import {
   Text,
   useColorModeValue,
   Link,
+  useToast,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
-import { signup } from "../Redux/Authentication/action";
+// import { signup } from "../Redux/Authentication/action";
 import axios from "axios";
 
 export const SignUp = () => {
@@ -66,8 +62,6 @@ export const SignUp = () => {
       });
     }
     dispatch(signup(formvalue));
-
-  
   };
 
   useEffect(()=>{
@@ -103,7 +97,7 @@ export const SignUp = () => {
       <Box
         position={"relative"}
         style={{
-          backgroundImage: `url(${blackbgEar})`,
+          // backgroundImage: `url(${blackbgEar})`,
           //  backgroundRepeat:"no-repeat",
           backgroundSize: "cover",
         }}
@@ -121,7 +115,7 @@ export const SignUp = () => {
         >
           <Flex
             style={{
-              backgroundImage: `url(${blackbgEar})`,
+              // backgroundImage: `url(${blackbgEar})`,
               //  backgroundRepeat:"no-repeat",
               backgroundSize: "cover",
             }}
