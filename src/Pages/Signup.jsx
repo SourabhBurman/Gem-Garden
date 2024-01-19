@@ -61,7 +61,7 @@ export const SignUp = () => {
         position: "top",
       });
     }
-    dispatch(signup(formvalue));
+    // dispatch(signup(formvalue));
   };
 
   useEffect(()=>{
