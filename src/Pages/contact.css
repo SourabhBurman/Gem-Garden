@@ -1,40 +1,44 @@
-body {
-    background: #111315;
+/* body {
+    background-color: #111315;
     line-height: 26px;
     margin: 0;
-  }
-  .head{
+  }  */
+ .con-main{
+  background-color: #111315;
+  height: 100%;
+  
+ }
+ 
+ .sub{
+   width: 835px;
+ }
+  .contact-head{
     text-align: center;
-    margin-top: -50px;
-    /* background-color: #f45532; */
     color: white;
+    font-size:xx-large;
+    margin-bottom: 20px;
   }
   .para{
     color: white;
     max-width: 400px;
     text-align: center;
-    margin-left: 460px;
+    margin-left: 480px;
   }
   
   
   .ContactForm{
-    /* background-color: #f45532; */
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .App {
-    height: 75vh;
-    margin-top: 15vh;
-  }
-  
-  form {
+   form {
     margin-top: 20px;
-  }
-  /* input[type=text]{
+  } 
+   input[type=text]{
     color: white;
-  } */
+  } 
   input , textarea{
     background-color: #1a1d1f;
     border:1px solid white;
@@ -50,28 +54,32 @@ body {
     display: flex;
     column-gap: 20px;
   
-  }
+  } 
   
-  .formInput {
-    padding: 15px 10px;
-    /* margin-left: 20px; */
-    width: 400px;
+   .formInput {
+    padding: 15px 10px; 
+     margin-left: 20px; 
+     /* width: 400px; */
     margin-top: 20px;
+  } 
+   .contactForm{ 
+     background-color:black; 
+     align-content: center;
+     width: 885px;
+     margin-left: 200px;
+  } 
+  .contact-name{
+    width: 400px;
   }
-  .contactForm{
-    /* background-color:black; */
-    align-content: center;
-    width: 885px;
+  .contact-mail{
+    width: 400px;
   }
-  .sub{
-    width: 840px;
-  }
-  .message{
+   .message{
     width: 840px;
     height: 100px;
-  }
+  } 
   
-  .errorMessage {
+   .errorMessage {
     color: red;
     font-size: 14px;
     margin-left: 20px;
@@ -84,7 +92,7 @@ body {
     margin-bottom: 25px;
     background-color:#008080;
     color: white;
-    margin-left: 375px;
+    /* margin-left: 375px; */
   }
   
   @media (max-width: 768px) {
