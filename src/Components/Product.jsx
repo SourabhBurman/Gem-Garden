@@ -95,10 +95,6 @@ function Product() {
                 Read More
               </Button>
             </ButtonGroup>
-            {/* <div style={{ margin: "4% 4%" }}>
-              <button style={stylemapdivbutton1}>ADD CARD</button>
-              <button style={stylemapdivbutton2}>Read More</button>
-            </div> */}
           </Box>
         ))}
       </Grid>
