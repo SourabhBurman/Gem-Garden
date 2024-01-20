@@ -10,24 +10,32 @@ import {
   Text,
   Spinner,
   Center,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_CART } from "../Store/actiontype";
 
-function Product() {
-  const [err, setErr] = useState(false);
-  const [loading, setLoading] = useState(false);
+function Product({query}) {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [Loading,setLoading] = useState(false);
+  const [Err,setErr] = useState(false);
+  const dispatch = useDispatch();
+  const toast = useToast()
+
 
   useEffect(() => {
-    fetchrender();
-  }, [page]);
+   fetchrender(page,query);
+  }, [page,query]);
+
 
   const fetchrender = async () => {
     setLoading(true);
     try {
       let res = await fetch(
-        `https://traveller-jt36.onrender.com/jewellery?_page=${page}&_limit=12`
+        `https://traveller-jt36.onrender.com/jewellery?_page=${page}&_limit=12${query && "&category="+query || "Rings"}`
       );
       let data = await res.json();
       setLoading(false);
@@ -38,7 +46,7 @@ function Product() {
     }
   };
 
-  if (loading) {
+  if (Loading) {
     return <Center p={"150px"}>
       <Spinner
   thickness='4px'
@@ -50,16 +58,20 @@ function Product() {
     </Center>;
   }
 
-  // if (err) {
-  //   return <h2>Error...</h2>;
-  // }
+  if (Err) {
+    return  toast({
+      title: `Try Again`,
+      status: "error",
+      isClosable: true,
+    });
+  }
 
   const handclick = (val) => {
     setPage(page + val);
   };
 
   return (
-    <div style={{ paddingTop:"70px"}}>
+    <div style={{ paddingTop:"70px", paddingBottom:"70px"}}>
       <Grid
         textAlign={"left"}
         color={"#171616"}
@@ -70,7 +82,7 @@ function Product() {
         justifyContent={"center"}
         templateColumns={"repeat(4,1fr)"}
       >
-        {data.map((ele) => (
+        {data.map((ele,i) => (
           // <Box
           //   textAlign="center"
           //   boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
@@ -106,6 +118,7 @@ function Product() {
             flexDir={"column"}
             _hover={{ transform: "scale(1.02)", transition: "transform 0.4s" }}
             h={"320px"}
+            key={i}
           >
             <Image src={ele.avatar} w="200px" m={"auto"} />
             <Flex justifyContent={"space-around"} alignItems={"center"}>
@@ -142,6 +155,7 @@ function Product() {
                   _hover={{ color: "black", bg: "gray.100" }}
                   fontSize={"15px"}
                   p={"0"}
+                  onClick={()=>dispatch({type : ADD_CART , payload : ele})}
                 >
                   ADD
                 </Button>

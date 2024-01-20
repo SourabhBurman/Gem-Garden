@@ -33,7 +33,7 @@ import {
 } from "@chakra-ui/react";
 import { MydrawerContent } from "./MydrawerContent";
 
-export const Navbar = () => {
+export const Navbar = ({setQuery}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -97,7 +97,7 @@ export const Navbar = () => {
           <DrawerCloseButton />
           <DrawerHeader>{`Gem Garden`}</DrawerHeader>
           <DrawerBody>
-            <MydrawerContent />
+            <MydrawerContent setQuery={setQuery}/>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

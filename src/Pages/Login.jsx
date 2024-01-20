@@ -22,6 +22,8 @@ import {
 // import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import image2 from "../Pics/photo-1617038260897-41a1f14a8ca0.avif"
+import { LOGIN } from "../Store/actiontype";
+import { loginFunc } from "../Store/action";
 // import { login } from "../Redux/Authentication/action";
 // import { login } from '../Redux/Authentication/action'
 
@@ -30,6 +32,7 @@ export const Login = ({setLogsign}) => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [submissiondisbled, setSubmissiondisbled] = useState(false);
+  const [token,setToken] = useState(false);
   const toast = useToast();
   const location = useLocation()
   // const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
@@ -40,7 +43,7 @@ export const Login = ({setLogsign}) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+console.log("clicked")
     if (!logindata.email || !logindata.password){
       toast({
         title: "Failed!!",
@@ -50,41 +53,39 @@ export const Login = ({setLogsign}) => {
         duration: 4000,
         isClosable: true,
       });
-      return;
+      // return;
     }
-
-    // dispatch(login(logindata));
+    loginFunc(logindata).then(res=>{
+       setToken(res)
+      // console.log(res);
+      }
+       )
+    console.log(token) 
   };
 
-  // useEffect(()=>{
-  //   if (token) {
-  //     toast({
-  //       title: "Success",
-  //       description: "User LoggedIn Successful",
-  //       status: "success",
-  //       position: "top",
-  //       duration: 4000,
-  //       isClosable: true,
-  //     });
-  //     localStorage.setItem("user-token",token)
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 4000);
-  //     setLoginData({email:"",password:""});
-  //     return;
-  //   } 
-  //   if(errMsg){
-  //     toast({
-  //       title: "Failed",
-  //       description: errMsg,
-  //       status: "error",
-  //       position: "top",
-  //       duration: 4000,
-  //       isClosable: true,
-  //     });
-  //     return
-  //   }
-  // },[isAuth,token,errMsg])
+  useEffect(()=>{
+    if (token) {
+      dispatch({type:LOGIN});
+      toast({
+        title: "Success",
+        description: "User LoggedIn Successful",
+        status: "success",
+        position: "top",
+        duration: 4000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: "Failed",
+        description: "Email and password mismatch",
+        status: "error",
+        position: "top",
+        duration: 4000,
+        isClosable: true,
+      });
+    }
+    
+  },[token])
 
   return (
     <>
