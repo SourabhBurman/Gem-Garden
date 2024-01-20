@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+// import blackbgEar from "../Assets/black.jpg";
+// import "animate.css";
+import { color, useToast } from "@chakra-ui/react";
 import {
   Flex,
   Box,
@@ -15,7 +18,6 @@ import {
   Text,
   useColorModeValue,
   Link,
-  useToast,
 } from "@chakra-ui/react";
 // import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,7 +51,40 @@ export const Login = () => {
       });
       return;
     }
+
+    // dispatch(login(logindata));
   };
+
+  // useEffect(()=>{
+  //   if (token) {
+  //     toast({
+  //       title: "Success",
+  //       description: "User LoggedIn Successful",
+  //       status: "success",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //     localStorage.setItem("user-token",token)
+  //     setTimeout(() => {
+  //       navigate("/");
+  //     }, 4000);
+  //     setLoginData({email:"",password:""});
+  //     return;
+  //   } 
+  //   if(errMsg){
+  //     toast({
+  //       title: "Failed",
+  //       description: errMsg,
+  //       status: "error",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //     return
+  //   }
+  // },[isAuth,token,errMsg])
+
   return (
     <>
       <Box
@@ -199,6 +234,8 @@ export const Login = () => {
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >
+                        {" "}
+                        {/* Admin Login <ArrowForwardIcon />{" "} */}
                       </Link>
                     </Text>
                   </Stack>
