@@ -2,7 +2,8 @@ import { useState } from "react";
 import React from 'react';
 import "./contact.css";
 // import { useForm } from "react-hook-form";
-
+// import { Bounce, ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactForm = () => {
 
@@ -23,16 +24,15 @@ export const ContactForm = () => {
   });
 
   // // Shows alert message for form submission feedback
-  const toggleAlert = (message, type) => {
-    setAlertInfo({ display: true, message, type });
+  // const toggleAlert = (message, type) => {
+  //   setAlertInfo({ display: true, message, type });
 
-    // Hide alert after 5 seconds
-    setTimeout(() => {
-      setAlertInfo({ display: false, message: '', type: '' });
-    }, 5000);
-  };
+  //   // Hide alert after 5 seconds
+  //   setTimeout(() => {
+  //     setAlertInfo({ display: false, message: '', type: '' });
+  //   }, 5000);
+  // };
    
-  
   // // Function called on submit that uses emailjs to send email of valid contact form
   const onSubmit = async (data) => {
     // Destrcture data object
@@ -42,13 +42,22 @@ export const ContactForm = () => {
       setDisabled(true);
       //  alert("Successful");
       
-
-      // Display success alert
-      toggleAlert('Form submission was successful!', 'success');
+      // toast.success('Form Submitted..We will get back to you soon.', {
+      //   position: "top-center",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "colored",
+      //   transition: Bounce,
+      //   });
+      
     } catch (e) {
-      console.error(e);
+      // console.error(e);
       // Display error alert
-      toggleAlert('Uh oh. Something went wrong.', 'danger');
+      // toggleAlert('Uh oh. Something went wrong.', 'danger');
     } finally {
       // Re-enable form submission
       setDisabled(false);
@@ -68,6 +77,8 @@ export const ContactForm = () => {
             
          <h1 className='contact-head'>Contact Us</h1>
          <p className='para'>if you've got any questions, please fill out the short form below , we promise to get back to you in lightening speed. </p>
+         <br />
+         <br />
         </div> 
        <div className='ContactForm'>
         <div className='container'>
@@ -76,6 +87,7 @@ export const ContactForm = () => {
               <div className='contactForm'>
                 <form
                   id='contact-form'
+                  // onSubmit={handleSubmit(onSubmit)}
                   noValidate
                 >
                   {/* Row 1 of form */}
@@ -179,10 +191,12 @@ export const ContactForm = () => {
                   </button>
                 </form>
               </div>
+                 <br />
             </div>
           </div>
         </div>
       </div>
+      {/* <ToastContainer /> */}
      </> 
     );
 };

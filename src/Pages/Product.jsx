@@ -58,13 +58,6 @@ function Product() {
     setPage(page + val);
   };
 
-  var stylesecondmaindiv = {
-    width: "100%",
-    padding: "20px",
-    backgroundColor: "green",
-    marginBottom: "25px",
-  };
-
   return (
     <div style={{ paddingTop:"70px"}}>
       <Grid
@@ -106,43 +99,64 @@ function Product() {
           //     </Button>
           //   </ButtonGroup>
           // </Box>
-          <Box boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px" display={"flex"} p={"10px"} flexDir={"column"}  _hover={{ transform: "scale(1.02)", transition: "transform 0.4s" }} h={"320px"}>
-          <Image src={ele.avatar} w='200px' m={"auto"} />
-          <Flex justifyContent={"space-around"} alignItems={"center"}>
-            <Flex direction="column" gap="2%">
-            <Heading as="h6" size={"sm"} textAlign="left">{ele.brand}</Heading>
-          <Text  fontSize={"14px"} maxW={"130px"} textOverflow={"ellipsis"} overflow={"hidden"}>{ele.about}</Text>
-          <Text  fontSize={"14px"} color='gray'> ${ele.price}</Text>
+          <Box
+            boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
+            display={"flex"}
+            p={"10px"}
+            flexDir={"column"}
+            _hover={{ transform: "scale(1.02)", transition: "transform 0.4s" }}
+            h={"320px"}
+          >
+            <Image src={ele.avatar} w="200px" m={"auto"} />
+            <Flex justifyContent={"space-around"} alignItems={"center"}>
+              <Flex direction="column" gap="2%">
+                <Heading as="h6" size={"sm"} textAlign="left">
+                  {ele.brand}
+                </Heading>
+                <Text
+                  fontSize={"14px"}
+                  maxW={"130px"}
+                  textOverflow={"ellipsis"}
+                  overflow={"hidden"}
+                >
+                  {ele.about}
+                </Text>
+                <Text fontSize={"14px"} color="gray">
+                  {" "}
+                  ₹{ele.price}
+                </Text>
+              </Flex>
+              <Flex
+                direction="column"
+                justifyContent={"space-around"}
+                alignItems={"center"}
+                gap="10px"
+              >
+                <Button variant="link" color={"black"} fontSize={"15px"}>
+                  More Detail
+                </Button>
+                <Button
+                  color="white"
+                  bg="black"
+                  w={"60px"}
+                  _hover={{ color: "black", bg: "gray.100" }}
+                  fontSize={"15px"}
+                  p={"0"}
+                >
+                  ADD
+                </Button>
+              </Flex>
             </Flex>
-            <Flex direction="column" justifyContent={"space-around"} alignItems={"center"} gap="10px">
-              <Button  variant='link' color={"black"} fontSize={"15px"}>
-              More Detail
-            </Button>
-            <Button color='white' bg='black' w={"60px"} _hover={{color:"black",bg:"gray.100"}}  fontSize={"15px"} p={"0"}>
-              ADD
-            </Button>
-            </Flex>
-          </Flex>
-          
-        </Box>
+          </Box>
         ))}
-
-        
-       </Grid>
-       <ButtonGroup variant="outline" spacing="7"  m="13%">
-        <Button
-          onClick={() => handclick(-1)}
-          disabled={page == 1}
-        >
+      </Grid>
+      <ButtonGroup variant="outline" spacing="7" mt="12%">
+        <Button onClick={() => handclick(-1)} isDisabled={page === 1}>
           Previous
         </Button>
         <p>{page}</p>
-        <Button
-          onClick={() => handclick(1)}
-        >
-          Next
-        </Button>
-      </ButtonGroup> 
+        <Button onClick={() => handclick(1)}>Next</Button>
+      </ButtonGroup>
     </div>
   );
 }

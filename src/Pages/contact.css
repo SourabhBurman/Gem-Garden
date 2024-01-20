@@ -67,6 +67,7 @@
      align-content: center;
      width: 885px;
      margin-left: 200px;
+     border-radius: 10px;
   } 
   .contact-name{
     width: 400px;
