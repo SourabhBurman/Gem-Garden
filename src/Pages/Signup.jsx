@@ -17,7 +17,7 @@ import {
   Link,
   useToast,
 } from "@chakra-ui/react";
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+// import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
 // import { signup } from "../Redux/Authentication/action";
@@ -64,33 +64,33 @@ export const SignUp = () => {
     // dispatch(signup(formvalue));
   };
 
-  useEffect(()=>{
-    if (isRegistered) {
-      toast({
-        title: "Success",
-        description: "User Registered Successful",
-        status: "success",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-      setTimeout(() => {
-        navigate("/login");
-      }, 4000);
-      setFormvalue({ firstname: "", lastname: "", email: "", password: "" });
-      return;
-    } 
-    else if(errMsg){
-       toast({
-        title: "Failed",
-        description: errMsg,
-        status: "error",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-    }
-  },[isRegistered,errMsg])
+  // useEffect(()=>{
+  //   if (isRegistered) {
+  //     toast({
+  //       title: "Success",
+  //       description: "User Registered Successful",
+  //       status: "success",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //     setTimeout(() => {
+  //       navigate("/login");
+  //     }, 4000);
+  //     setFormvalue({ firstname: "", lastname: "", email: "", password: "" });
+  //     return;
+  //   } 
+  //   else if(errMsg){
+  //      toast({
+  //       title: "Failed",
+  //       description: errMsg,
+  //       status: "error",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //   }
+  // },[isRegistered,errMsg])
 
   return (
     <>
@@ -251,7 +251,7 @@ export const SignUp = () => {
                             setShowPassword((showPassword) => !showPassword)
                           }
                         >
-                          {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                          {/* {showPassword ? <ViewIcon /> : <ViewOffIcon />} */}
                         </Button>
                       </InputRightElement>
                     </InputGroup>

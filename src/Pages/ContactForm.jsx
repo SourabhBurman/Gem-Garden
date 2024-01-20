@@ -1,19 +1,20 @@
 import { useState } from "react";
 import React from 'react';
 import "./contact.css";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 
 export const ContactForm = () => {
 
 
 // const toast = useToast();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = useForm();
+
   const [disabled, setDisabled] = useState(false);
   const [alertInfo, setAlertInfo] = useState({
     display: false,
@@ -52,7 +53,7 @@ export const ContactForm = () => {
       // Re-enable form submission
       setDisabled(false);
       // Reset contact form fields after submission
-      reset();
+      // reset();
     }
   };
 
@@ -75,7 +76,6 @@ export const ContactForm = () => {
               <div className='contactForm'>
                 <form
                   id='contact-form'
-                  onSubmit={handleSubmit(onSubmit)}
                   noValidate
                 >
                   {/* Row 1 of form */}
@@ -84,44 +84,44 @@ export const ContactForm = () => {
                       <input
                         type='text'
                         name='name'
-                        {...register('name', {
-                          required: {
-                            value: true,
-                            message: 'Please enter your name',
-                          },
-                          maxLength: {
-                            value: 30,
-                            message: 'Please use 30 characters or less',
-                          },
-                        })}
+                        // {...register('name', {
+                        //   required: {
+                        //     value: true,
+                        //     message: 'Please enter your name',
+                        //   },
+                        //   maxLength: {
+                        //     value: 30,
+                        //     message: 'Please use 30 characters or less',
+                        //   },
+                        // })}
                         className='form-control formInput contact-name'
                         placeholder='Name'
                       ></input>
                       <br />
-                      {errors.name && (
+                      {/* {errors.name && (
                         <span className='errorMessage'>
                           {errors.name.message}
                         </span>
-                      )}
+                      )} */}
                     </div>
                     <div className='col-6'>
                       <input
                         type='email'
                         name='email'
-                        {...register('email', {
-                          required: true,
-                          pattern:
-                            /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                        })}
+                        // {...register('email', {
+                        //   required: true,
+                        //   pattern:
+                        //     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                        // })}
                         className='form-control formInput contact-mail'
                         placeholder='Email address'
                       ></input>
                       <br />
-                      {errors.email && (
+                      {/* {errors.email && (
                         <span className='errorMessage'>
                           Please enter a valid email address
                         </span>
-                      )}
+                      )} */}
                     </div>
                   </div>
                   {/* Row 2 of form */}
@@ -130,25 +130,25 @@ export const ContactForm = () => {
                       <input
                         type='text'
                         name='subject'
-                        {...register('subject', {
-                          required: {
-                            value: true,
-                            message: 'Please enter a subject',
-                          },
-                          maxLength: {
-                            value: 75,
-                            message: 'Subject cannot exceed 75 characters',
-                          },
-                        })}
+                        // {...register('subject', {
+                        //   required: {
+                        //     value: true,
+                        //     message: 'Please enter a subject',
+                        //   },
+                        //   maxLength: {
+                        //     value: 75,
+                        //     message: 'Subject cannot exceed 75 characters',
+                        //   },
+                        // })}
                         className='form-control formInput sub'
                         placeholder='Title'
                       ></input>
                       <br />
-                      {errors.subject && (
+                      {/* {errors.subject && (
                         <span className='errorMessage'>
                           {errors.subject.message}
                         </span>
-                      )}
+                      )} */}
                     </div>
                   </div>
                   {/* Row 3 of form */}
@@ -157,18 +157,16 @@ export const ContactForm = () => {
                       <textarea
                         rows={3}
                         name='message'
-                        {...register('message', {
-                          required: true,
-                        })}
+                       
                         className='form-control formInput message'
                         placeholder='Message'
                       ></textarea>
                       <br />
-                      {errors.message && (
+                      {/* {errors.message && (
                         <span className='errorMessage'>
                           Please enter a message
                         </span>
-                      )}
+                      )} */}
                     </div>
                   </div>
 

@@ -1,11 +1,13 @@
-import { Box, Flex, Grid, Heading, Image, Text, transition } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Heading, Image, Text, transition } from '@chakra-ui/react'
 import React from 'react'
 import img1 from "../Pics/messika-cr_oles-move-uno-diamant-or-blanc.jpg"
 import img2 from "../Pics/messika-collier-move-uno-gm-diamant-or-blanc-bis.jpg"
 import img3 from "../Pics/messika-bracelet-diamant-or-blanc-so-move-xl-pave-12942.jpg"
 import img4 from "../Pics/bague-diamant-blanc-titane-graphite-move-titanium-pm-07164_1.jpg"
+import { useNavigate } from 'react-router'
 
 export const NewCollection = () => {
+  const navigate = useNavigate();
     return (
         <>
         <Box m="30px">
@@ -14,11 +16,13 @@ export const NewCollection = () => {
                 <Flex justifyContent={"space-between"} alignItems={"center"}>
 
                     <Box textAlign={"left"} color={"#171616"} fontWeight={"400"}>
-                        <Heading size={"lg"} fontWeight={"400"} textTransform={"uppercase"}>New Collections</Heading>
+                        <Heading size={"lg"} fontWeight={"400"} textTransform={"uppercase"} color={"black"} Heading>New Collections</Heading>
                         <Text fontSize={"16px"}>Check Out the New Collections of Famous Brands</Text>
                     </Box>
                     <Box>
-                        <Text fontSize={"16px"}>ALL COLLECTIONS</Text>
+                    <Button colorScheme='black' fontWeight='light' variant='link' onClick={()=>navigate("/products")}>
+                    ALL COLLECTIONS
+              </Button>
                     </Box>
                 </Flex>
             </Box>

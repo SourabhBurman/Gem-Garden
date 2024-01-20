@@ -14,9 +14,8 @@ export const Home = () => {
       <NewCollection />
       <CategoriesSection />
       <Bestseller />
-      <Abouts />
-
       <Gifts />
+      <Abouts />
     </>
   );
 };
