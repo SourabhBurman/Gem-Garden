@@ -21,10 +21,11 @@ import {
 } from "@chakra-ui/react";
 // import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
+import image2 from "../Pics/photo-1617038260897-41a1f14a8ca0.avif"
 // import { login } from "../Redux/Authentication/action";
 // import { login } from '../Redux/Authentication/action'
 
-export const Login = () => {
+export const Login = ({setLogsign}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -95,6 +96,11 @@ export const Login = () => {
           backgroundSize: "cover",
         }}
       >
+         <Stack align={"center"}>
+              <Heading color={"black"} fontSize={"2xl"} textAlign={"center"}>
+                  Login
+                </Heading>
+              </Stack>
         <form
           onSubmit={handleLogin}
           style={{
@@ -113,9 +119,10 @@ export const Login = () => {
               backgroundSize: "cover",
             }}
             align={"center"}
-            justify={"center"}
+            justify={"space-around"}
             bg={useColorModeValue("gray.50", "gray.800")}
           >
+             <Box w="30%" h="400px" borderRadius={"5px"} backgroundImage={image2} backgroundSize={"cover"} backgroundPosition={"center"}></Box>
             <Stack
               borderRadius={"none"}
               className="animate__animated animate__pulse"
@@ -128,11 +135,7 @@ export const Login = () => {
                 "2xl": "40%",
               }}
             >
-              <Stack align={"center"}>
-                <Heading color={"white"} fontSize={"4xl"} textAlign={"center"}>
-                  Login
-                </Heading>
-              </Stack>
+             
               <Box
                 rounded={"lg"}
                 bg={useColorModeValue("white", "gray.700")}
@@ -220,13 +223,13 @@ export const Login = () => {
                   <Stack pt={6}>
                     <Text align={"center"}>
                       Not registered?{" "}
-                      <Link
-                        href="/signup"
+                      <Button  variant='link'
+                        onClick={()=> setLogsign(false)}
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >
-                        Signup
-                      </Link>
+                        Sign Up
+                      </Button>
                     </Text>
                     <Text align={"center"}>
                       <Link

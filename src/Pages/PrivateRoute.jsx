@@ -3,5 +3,5 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { Account } from './Account'
 
 export const PrivateRoute = () => {
-  return (false? <Outlet /> : <Navigate to='/account' />)
+  return (true? <Outlet /> : <Navigate to='/account' />)
 }

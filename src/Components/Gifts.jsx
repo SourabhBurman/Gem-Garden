@@ -86,7 +86,7 @@ export const Gifts = () => {
                   position: 'bottom-left',
                   title: 'GIFT SEND SUCCESSFULLY',
                   description: "We've send your gift.",
-                  duration: 5000,
+                  duration: 2000,
                   render: () => (
                     <Box color='white' p={3} bg='black'>
                      🎁 GIFT SENT SUCCESSFULLY

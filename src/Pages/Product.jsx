@@ -9,6 +9,7 @@ import {
   ButtonGroup,
   Text,
   Spinner,
+  Center,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -26,7 +27,7 @@ function Product() {
     setLoading(true);
     try {
       let res = await fetch(
-        `https://gem-gardern-mock-api.onrender.com/products?_page=${page}&_limit=12`
+        `https://traveller-jt36.onrender.com/jewellery?_page=${page}&_limit=12`
       );
       let data = await res.json();
       setLoading(false);
@@ -38,12 +39,20 @@ function Product() {
   };
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <Center p={"150px"}>
+      <Spinner
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='black.500'
+  size='xl'
+/>
+    </Center>;
   }
 
-  if (err) {
-    return <h2>Error...</h2>;
-  }
+  // if (err) {
+  //   return <h2>Error...</h2>;
+  // }
 
   const handclick = (val) => {
     setPage(page + val);
@@ -57,14 +66,14 @@ function Product() {
   };
 
   return (
-    <div style={{ marginBottom: "10%"}}>
+    <div style={{ paddingTop:"70px"}}>
       <Grid
         textAlign={"left"}
         color={"#171616"}
         w="90%"
         m="auto"
         gap="4%"
-        pt={"70px"}
+        // pt={"70px"}
         justifyContent={"center"}
         templateColumns={"repeat(4,1fr)"}
       >
@@ -119,8 +128,8 @@ function Product() {
         ))}
 
         
-      </Grid>
-      <ButtonGroup variant="outline" spacing="7"  mt="12%">
+       </Grid>
+       <ButtonGroup variant="outline" spacing="7"  m="13%">
         <Button
           onClick={() => handclick(-1)}
           disabled={page == 1}
@@ -133,7 +142,7 @@ function Product() {
         >
           Next
         </Button>
-      </ButtonGroup>
+      </ButtonGroup> 
     </div>
   );
 }

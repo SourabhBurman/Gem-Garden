@@ -22,13 +22,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
 // import { signup } from "../Redux/Authentication/action";
 import axios from "axios";
+import image1 from "../Pics/photo-1569397288884-4d43d6738fbd.avif"
 
-export const SignUp = () => {
+
+export const SignUp = ({setLogsign}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const toast = useToast();
-  const { user, regMsg,isRegistered,errMsg } = useSelector((store) => store.authReducer);
+  // const { user, regMsg,isRegistered,errMsg } = useSelector((store) => store.authReducer);
   // const { errorMessage } = useSelector((store) => store.authReducer);
   const [formvalue, setFormvalue] = useState({
     firstname: "",
@@ -97,11 +99,17 @@ export const SignUp = () => {
       <Box
         position={"relative"}
         style={{
+          margin:"auto",
+          width:"90%",
+          // border:"solid green"
           // backgroundImage: `url(${blackbgEar})`,
           //  backgroundRepeat:"no-repeat",
-          backgroundSize: "cover",
+          // backgroundSize: "cover",
         }}
       >
+         <Heading color={"black"} fontSize={"2xl"} textAlign={"center"}>
+                  Sign up
+                </Heading>
         <form
           style={{
             // position:"absolute",
@@ -117,12 +125,14 @@ export const SignUp = () => {
             style={{
               // backgroundImage: `url(${blackbgEar})`,
               //  backgroundRepeat:"no-repeat",
-              backgroundSize: "cover",
             }}
             align={"center"}
-            justify={"center"}
+            justify={"space-around"}
             bg={useColorModeValue("gray.50", "gray.800")}
+            w={"100%"}
+            // border={"solid red"}
           >
+            <Box w="30%" h="400px" borderRadius={"5px"} backgroundImage={image1} backgroundSize={"cover"} backgroundPosition={"center"}></Box>
             <Stack
               borderRadius={"none"}
               className="animate__animated animate__pulse"
@@ -136,9 +146,7 @@ export const SignUp = () => {
               }}
             >
               <Stack align={"center"}>
-                <Heading color={"white"} fontSize={"4xl"} textAlign={"center"}>
-                  Sign up
-                </Heading>
+               
               </Stack>
               <Box
                 rounded={"lg"}
@@ -149,12 +157,13 @@ export const SignUp = () => {
                 <Stack spacing={4}>
                   <Box>
                     <FormControl id="firstName">
-                      <FormLabel>FirstName</FormLabel>
+                      {/* <FormLabel>FirstName</FormLabel> */}
                       <Input
                         borderRight={"none"}
                         borderTop={"none"}
                         focusBorderColor="none"
                         placeholder={"Enter your firstname"}
+                        // h={"30px"}
                         // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                         _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                         _focus={{
@@ -172,15 +181,16 @@ export const SignUp = () => {
                       />
                     </FormControl>
                   </Box>
-              
+
                   <Box>
                     <FormControl id="lastname">
-                      <FormLabel>LastName</FormLabel>
+                      {/* <FormLabel>LastName</FormLabel> */}
                       <Input
                         borderRight={"none"}
                         borderTop={"none"}
                         focusBorderColor="none"
                         placeholder={"Enter your lastname"}
+                        // h={"30px"}
                         // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                         _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                         _focus={{
@@ -199,12 +209,13 @@ export const SignUp = () => {
                     </FormControl>
                   </Box>
                   <FormControl id="email">
-                    <FormLabel>Email address</FormLabel>
+                    {/* <FormLabel>Email address</FormLabel> */}
                     <Input
                       borderRight={"none"}
                       borderTop={"none"}
                       focusBorderColor="none"
                       placeholder={"Enter email address"}
+                      // h={"30px"}
                       // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                       _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                       _focus={{
@@ -222,13 +233,14 @@ export const SignUp = () => {
                     />
                   </FormControl>
                   <FormControl id="password">
-                    <FormLabel>Password</FormLabel>
+                    {/* <FormLabel>Password</FormLabel> */}
                     <InputGroup>
                       <Input
                         borderRight={"none"}
                         borderTop={"none"}
                         focusBorderColor="none"
                         placeholder={"Enter password"}
+                        // h={"30px"}
                         // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                         _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                         _focus={{
@@ -279,16 +291,16 @@ export const SignUp = () => {
                       Sign up
                     </Button>
                   </Stack>
-                  <Stack pt={6}>
+                  <Stack pt={1}>
                     <Text align={"center"}>
                       Already a user?{" "}
-                      <Link
-                        href="/login"
+                      <Button  variant='link'
+                        onClick={()=> setLogsign(true)}
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >
                         Login
-                      </Link>
+                      </Button>
                     </Text>
                   </Stack>
                 </Stack>
