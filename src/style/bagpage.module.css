@@ -1,0 +1,47 @@
+.giftcard{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    background: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+    
+}
+
+.giftHeading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+.gitfbutton{
+    padding: 1px;
+    /* border: 1px solid black; */
+    background-color: rgb(181, 181, 181);
+}
+
+.gitfbutton:hover{
+background-color: white;
+}
+.paymentCard{
+/* border: 2px solid ;
+ */
+margin-top: 10px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+padding: 10px;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    /* margin: 20px; */
+}
+.cardandPayment{
+    /* border: 2px solid red; */
+    width: 40% ;
+  margin: 10px;
+}
+.cardgiftHeading{
+    font-weight: bold;
+}

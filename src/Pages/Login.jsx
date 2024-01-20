@@ -90,7 +90,7 @@ export const Login = () => {
       <Box
         position={"relative"}
         style={{
-          // backgroundImage: `url(${blackbgEar})`,
+          // backgroundImage: `url(${login})`,
           //  backgroundRepeat:"no-repeat",
           backgroundSize: "cover",
         }}
@@ -147,7 +147,6 @@ export const Login = () => {
                       borderTop={"none"}
                       focusBorderColor="none"
                       placeholder={"Your email address"}
-                      // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                       _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                       _focus={{
                         bg: "whiteAlpha.300",
@@ -171,7 +170,6 @@ export const Login = () => {
                         borderTop={"none"}
                         focusBorderColor="none"
                         placeholder={"Your password"}
-                        // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                         _placeholder={{ opacity: 1, color: "#a0a0a0" }}
                         _focus={{
                           bg: "whiteAlpha.300",
@@ -206,13 +204,11 @@ export const Login = () => {
                         background:
                           "linear-gradient(to top left, #171616 100%, #363431 51%)",
                       }}
-                      // bgGradient='linear(to-r, #171616, #363431)'
                       loadingText="Submitting"
                       size="lg"
                       bg={"blue.400"}
                       color={"white"}
                       _hover={{
-                        // bg: 'blue.500',
                         bgGradient: "linear(to-r,  #363431,#171616)",
                         border: "1px solid #FFB300 ",
                         color: "#FFB300",
