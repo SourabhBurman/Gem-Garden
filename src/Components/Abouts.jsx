@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Abouts.module.css";
+import styles from "../style/Abouts.module.css";
 
 const Abouts = () => {
   return (
@@ -31,7 +31,6 @@ const Abouts = () => {
       </div>
       <div
         className={styles.HomePage_secondDiv__lALhm}
-        classname={styles.HomePage_sectionM1__mmrYJ}
       >
         <div className={styles.divimge}>
           <img

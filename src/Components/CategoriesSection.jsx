@@ -33,7 +33,7 @@ export const CategoriesSection = () => {
             <Flex flexDirection={{ base: "column", sm: "column", md: "row", lg: "row", xl: "row", "2xl": "row" }} w='100%' justifyContent={"space-between"} alignItems={"center"}>
 
                 <Box cursor={"pointer"} textAlign={"left"} color={"#171616"} fontWeight={"400"}>
-                    <Text fontSize={"32px"}fontWeight={"300"} textTransform={"capitalize"}>Categories</Text>
+                    <Text fontSize={"32px"} fontWeight={"300"} textTransform={"capitalize"}>Categories</Text>
                     <Text fontSize={"16px"}>Discover Our Collection of Jewellery by Categories</Text>
 
                     <Box mt="50px" lineHeight={"40px"} fontWeight={"500"} boxSize='fit-content'>

@@ -1,6 +1,8 @@
 
 section {
     display: block;
+    margin-top: 50px;
+    /* border: solid; */
 }
 
 #HomePage_about__KBFWW .HomePage_secondDiv__lALhm {
@@ -9,8 +11,8 @@ section {
     justify-content: space-between;
     /* border:1px solid red; */
     gap:7%;
-    width: 80%;
-    margin: 10% 20% 7% 11%; 
+    width: 83%;
+    margin: 7% auto 7% auto; 
 }
 .HomePage_secondDiv__lALhm > .divimge {
      /* border: 2px solid green;  */
@@ -93,7 +95,8 @@ section {
 
  .HomePage_frstDiv2 >h1{
    font-size: 270px;
-    color: rgb(133, 131, 131);
+    color: rgb(164, 163, 163);
+    letter-spacing: -20px;
 }  
 /* .HomePage_frstDiv2>span{
     font-size: 200px;
@@ -123,9 +126,9 @@ p {
     padding-right: 1rem;
 }
 
-.HomePage_frstDiv2 >span{
+/* .HomePage_frstDiv2 >span{
     font-size: 300px;
-}
+} */
   
 
 

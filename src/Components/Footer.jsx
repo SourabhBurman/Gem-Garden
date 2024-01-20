@@ -1,38 +1,23 @@
 import React from "react";
-import styles from "./Footer.module.css";
-
+import styles from "../style/Footer.module.css";
+import fbicon from "../Pics/icons8-facebook-48.png"
+import twittericon from "../Pics/icons8-twitter-50.png"
+import instaicon from "../Pics/icons8-instagram-48.png"
 const Footer = () => {
   return (
     <div className={styles.foot_footerComponent__BtWvP}>
       <div className={styles.foot_app_Title__zA_uX}>
         <h2>GEM GARDEN</h2>
         <div className={styles.foot_social_media_Div__djhh7}>
-          <a href="https://www.facebook.com/hacked">
-            <img
-              className={styles.foot_social_media__hGU5z}
-              src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png"
-              title="facebook"
-              alt="Facebook"
-            />
+          <a href="https://www.facebook.com">
+          <img src={fbicon} style={{width:"30px"}}/>
           </a>
-          <img
-            className={styles.foot_social_media__hGU5z}
-            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png"
-            title="Instagram"
-            alt="Instagram"
-          />
-          <img
-            className={styles.foot_social_media__hGU5z}
-            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Pinterest2_svg-512.png"
-            title="Pinterest"
-            alt="Pinterest"
-          />
-          <img
-            className={styles.foot_social_media__hGU5z}
-            src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png"
-            title="Twitter"
-            alt="Twitter"
-          />
+          <a href="https://www.twitter.com/">
+          <img src={twittericon}  style={{width:"30px"}}/>
+          </a>
+          <a href="https://www.instagram.com/">
+          <img src={instaicon}  style={{width:"30px"}}/>
+           </a>
         </div>
       </div>
       <div className={styles.foot_contacts__yLyoe}>
@@ -50,7 +35,7 @@ const Footer = () => {
         <p>Watches</p>
       </div>
       <div className={styles.foot_email_Section__qc_3a}>
-        <h1>Discover the latest collections, news, and exclusive launches</h1>
+        <h1 style={{color:"white",fontWeight:"500"}}>Discover the latest collections, news, and exclusive launches</h1>
         <input
           className={styles.foot_mailInput__9Ia1}
           type="email"
