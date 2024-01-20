@@ -43,9 +43,11 @@ export const Gifts = () => {
           </p>
           <br />
           <br />
-          <span> <Button colorScheme='white' variant='link' onClick={onOpen}>
+          <span> 
+            <Button border={"none"} colorScheme='white' variant='link' onClick={onOpen}>
             SEND GIFT CARD
-          </Button></span>
+          </Button>
+          </span>
         </div>
       </section>
 
@@ -66,7 +68,7 @@ export const Gifts = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button mr={3} onClick={onClose}  color='white' bg='black' _hover={{color:"black",bg:"gray.100"}}>
+            <Button mr={3} onClick={onClose} border={"none"} color='white' bg='black' _hover={{color:"black",bg:"gray.100"}}>
               Cancel
             </Button>
 
