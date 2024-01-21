@@ -9,7 +9,7 @@ import categoryimgMenjewellery from '../Pics/menjewellery1620891239438-eb4b8b467
 import categoryimgPendant from '../Pics/pendant-1611583027838-515a1087afdb.avif'
 export const CategoriesSection = () => {
     const [hoverImg,setHover] = useState();
-    console.log(hoverImg);
+    // console.log(hoverImg);
     function findImage() {
         if(hoverImg=='Rings') {
           return categoryimgRings;

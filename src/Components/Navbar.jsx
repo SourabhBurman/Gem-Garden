@@ -93,15 +93,14 @@ export const Navbar = ({setQuery}) => {
         <Link to="/bag" as={NavLink} p="1">
           Bag
         </Link>
-        {isAuth && <Button colorScheme='white' variant='ghost' onClick={()=>dispatch({type:LOGOUT})}>
+      </Flex>
+      {isAuth ? <Button pos={"fixed"} color={"white"} zIndex={5} right={"12px"} top={"10px"} colorScheme='white' variant='ghost' onClick={()=>dispatch({type:LOGOUT})}>
     Logout
   </Button> 
-  // : <Button colorScheme='white' variant='ghost' onClick={()=>{navigate("/account")}}>
-  //   Login
-  // </Button>
+  : <Button pos={"fixed"} right={"12px"}  color={"white"} zIndex={5} top={"10px"}  colorScheme='white' variant='ghost' onClick={()=>{navigate("/account")}}>
+    Login
+  </Button>
   }
-      </Flex>
-
       <Drawer onClose={onClose} isOpen={isOpen} size="md" placement="left">
         <DrawerOverlay />
         <DrawerContent>

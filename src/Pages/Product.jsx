@@ -24,7 +24,7 @@ function Product({query}) {
   const [Err,setErr] = useState(false);
   const dispatch = useDispatch();
   const toast = useToast()
-
+  const {isAuth} = useSelector(st=>st);
 
   useEffect(() => {
    fetchrender(page,query);
@@ -155,7 +155,20 @@ function Product({query}) {
                   _hover={{ color: "black", bg: "gray.100" }}
                   fontSize={"15px"}
                   p={"0"}
-                  onClick={()=>dispatch({type : ADD_CART , payload : ele})}
+                  onClick={()=>{ isAuth?<> {dispatch({type : ADD_CART , payload : ele})} {toast({
+                    title : `Item Added to Cart`,
+                    status: "success",
+                    duration : 700,
+                    isClosable: true,
+                      backgroundColor : "black"
+                  })}</> : toast({
+                    title : `Login First`,
+                    status: "error",
+                    duration : 700,
+                    isClosable: true,
+                      backgroundColor : "black"
+                  }) }
+                }
                 >
                   ADD
                 </Button>

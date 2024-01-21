@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router';
 import styles from '../style/bagpage.module.css'
 import { Alert, AlertIcon, AlertTitle, AlertDescription } from '@chakra-ui/react';
 import { Link, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { DELETE_CART } from '../Store/actiontype';
 
 
 
@@ -19,10 +20,11 @@ export const Bag = () => {
   const [setpayment, setShowPaymentForm] = useState(false);
   const [card, setcard] = useState(false);
   const [modal, setModal] = useState(false);
-const {cart} = useSelector(store=>store);
-
-
+const {cartArray} = useSelector(store=>store);
+const dispatch = useDispatch();
+console.log(address)
   function placeOrder() {
+    console.log("clicled")
     setaddress(true)
   }
   const cardpaymentoption = (e) => {
@@ -30,18 +32,14 @@ const {cart} = useSelector(store=>store);
     setcard(true);
   }
 
-
-
-
   let length = 0;
   useEffect(() => {
-    // Fetch bag data from local storage when the component mounts
-    const storedBagData = JSON.parse(localStorage.getItem("bag")) || [];
-    console.log("Number of objects in bag:", storedBagData.length);
-    setAmt(storedBagData.length)
-    setBagData(storedBagData);
+    // const storedBagData = JSON.parse(localStorage.getItem("bag")) || [];
+    // console.log("Number of objects in bag:", storedBagData.length);
+    // setAmt(storedBagData.length)
+    // setBagData(storedBagData);
   }, []);
-  console.log(length);
+  // console.log(length);
   const removeFromBag = (productId) => {
     const updatedBag = bagData.filter((product) => product.id !== productId);
     setBagData(updatedBag);
@@ -84,7 +82,7 @@ const {cart} = useSelector(store=>store);
   const toggleModal = (e) => {
     e.preventDefault()
     setTimeout(() => {
-      setModal(!modal);
+      setModal(true);
     }, 1000)
 
   };
@@ -100,14 +98,14 @@ const {cart} = useSelector(store=>store);
     <>
       <div className={styles.cartandpaymentbox}>
         <div className={styles.firstbox}>
-          {cart.length === 0 ? (<p style={{ fontWeight: "bold", marginTop: "20px" }}>Your cart is empty.</p>) : (cart.map((temp) => (
+          {cartArray.length === 0 ? (<p style={{ fontWeight: "bold", marginTop: "20px" }}>Your cart is empty.</p>) : (cartArray.map((temp) => (
             <div key={temp.id} className={styles.cartbox}>
               <img className={styles.cartImage} src={temp.avatar} alt="" />
               <div className={styles.cartdetails}>
                 <strong style={{ marginLeft: "-115px" }}>{temp.brand}</strong>
                 <p>{temp.about}</p>
                 <p>Rs : {temp.price}</p>
-                <button className={styles.removeButton} onClick={() => removeFromBag(temp.id)}> <strong style={{ color: "white" }}>X</strong></button>
+                <button className={styles.removeButton} onClick={() =>{dispatch({type:DELETE_CART,payload:temp})} }> <strong style={{ color: "white" }}>X</strong></button>
               </div>
             </div>
           ))
@@ -150,10 +148,12 @@ const {cart} = useSelector(store=>store);
               <hr />
               <div className={styles.details}>
                 <div>Total Amount</div>
-                <div>₹{(subtotal + tax).toFixed(2)}</div>
+                <div>₹{cartArray.reduce((acc,curr)=>{
+                  return acc+curr.price
+                },0)}</div>
               </div>
               <div>
-                <button onClick={placeOrder} className={styles.gitfbutton} disabled={subtotal <= 0}>
+                <button onClick={()=>setaddress(!address)} className={styles.gitfbutton} disabled={cartArray.length <= 0}>
                   PLACE ORDER
                 </button>
               </div>
@@ -238,7 +238,10 @@ const {cart} = useSelector(store=>store);
 
         {/* payment card debit/credit */}
         {card &&
-          <div style={formContainerStyle}> <form >
+          <div style={formContainerStyle}> <form onSubmit={(e)=>{
+            e.preventDefault();
+            setModal(true);
+          } }>
             <div style={formGroupStyle}>
               <label htmlFor="amount" style={labelStyle}>
                 Amount <span style={{ color: "red" }}>*</span>
@@ -247,7 +250,9 @@ const {cart} = useSelector(store=>store);
                 type="text"
                 id="amount"
                 name="amount"
-                value={(subtotal + tax).toFixed(2)}
+                value={cartArray.reduce((acc,curr)=>{
+                  return acc+curr.price
+                },0)}
                 placeholder=" Enter Amount"
                 required
                 style={inputStyle}
@@ -306,7 +311,7 @@ const {cart} = useSelector(store=>store);
                 style={inputStyle}
               />
             </div>
-            <button onClick={toggleModal} type="submit" className={styles.modalbtn} >
+            <button type="submit" className={styles.modalbtn} >
               Pay Now
             </button>
             {modal && (

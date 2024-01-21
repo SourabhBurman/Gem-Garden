@@ -44,7 +44,7 @@
     color: rgb(0, 0, 0);
   } 
   input , textarea{
-    background-color: #1a1d1f;
+    /* background-color: #1a1d1f; */
     border:1px solid white;
     border-radius: 5px;
     /* color: white; */
