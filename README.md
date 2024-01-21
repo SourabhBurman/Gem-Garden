@@ -47,8 +47,14 @@ Team Members
 Sourav Burman
 
 Shyamgopal Biswas
+Github :- 
+LINKDIN :-
+
 
 Alipa
+Github :- https://github.com/Alipakkr
+LINKDIN :- https://www.linkedin.com/in/alipa-55b365285/
+
 
 Sachin Mohite
 Github :- https://github.com/sachin708
