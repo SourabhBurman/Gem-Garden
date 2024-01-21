@@ -19,7 +19,7 @@
 //       </Link>
 import { Flex, Heading, Link, Text, useDisclosure } from "@chakra-ui/react";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../style/navbar.module.css";
 import {
   Drawer,
@@ -32,10 +32,14 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { MydrawerContent } from "./MydrawerContent";
+import { useDispatch, useSelector } from "react-redux";
+import { LOGOUT } from "../Store/actiontype";
 
-export const Navbar = () => {
+export const Navbar = ({setQuery}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+   const {isAuth} = useSelector(st=>st);
+   const dispatch = useDispatch();
+   const navigate = useNavigate();
   return (
     <>
       <Flex
@@ -89,6 +93,13 @@ export const Navbar = () => {
         <Link to="/bag" as={NavLink} p="1">
           Bag
         </Link>
+        {isAuth && <Button colorScheme='white' variant='ghost' onClick={()=>dispatch({type:LOGOUT})}>
+    Logout
+  </Button> 
+  // : <Button colorScheme='white' variant='ghost' onClick={()=>{navigate("/account")}}>
+  //   Login
+  // </Button>
+  }
       </Flex>
 
       <Drawer onClose={onClose} isOpen={isOpen} size="md" placement="left">
@@ -97,7 +108,7 @@ export const Navbar = () => {
           <DrawerCloseButton />
           <DrawerHeader>{`Gem Garden`}</DrawerHeader>
           <DrawerBody>
-            <MydrawerContent />
+            <MydrawerContent setQuery={setQuery}/>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

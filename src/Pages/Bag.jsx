@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import styles from '../style/bagpage.module.css'
 import { Alert, AlertIcon, AlertTitle, AlertDescription } from '@chakra-ui/react';
 import { Link, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
@@ -18,6 +19,9 @@ export const Bag = () => {
   const [setpayment, setShowPaymentForm] = useState(false);
   const [card, setcard] = useState(false);
   const [modal, setModal] = useState(false);
+const {cart} = useSelector(store=>store);
+
+
   function placeOrder() {
     setaddress(true)
   }
@@ -25,6 +29,9 @@ export const Bag = () => {
     e.preventDefault();
     setcard(true);
   }
+
+
+
 
   let length = 0;
   useEffect(() => {
@@ -93,7 +100,7 @@ export const Bag = () => {
     <>
       <div className={styles.cartandpaymentbox}>
         <div className={styles.firstbox}>
-          {bagData.length === 0 ? (<p style={{ fontWeight: "bold", marginTop: "20px" }}>Your cart is empty.</p>) : (bagData.map((temp) => (
+          {cart.length === 0 ? (<p style={{ fontWeight: "bold", marginTop: "20px" }}>Your cart is empty.</p>) : (cart.map((temp) => (
             <div key={temp.id} className={styles.cartbox}>
               <img className={styles.cartImage} src={temp.avatar} alt="" />
               <div className={styles.cartdetails}>

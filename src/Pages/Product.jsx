@@ -9,24 +9,33 @@ import {
   ButtonGroup,
   Text,
   Spinner,
+  Center,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_CART } from "../Store/actiontype";
 
-function Product() {
-  const [err, setErr] = useState(false);
-  const [loading, setLoading] = useState(false);
+function Product({query}) {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [Loading,setLoading] = useState(false);
+  const [Err,setErr] = useState(false);
+  const dispatch = useDispatch();
+  const toast = useToast()
+
 
   useEffect(() => {
-    fetchrender();
-  }, [page]);
+   fetchrender(page,query);
+  }, [page,query]);
+
 
   const fetchrender = async () => {
     setLoading(true);
     try {
       let res = await fetch(
-        `https://gem-gardern-mock-api.onrender.com/products?_page=${page}&_limit=12`
+        `https://traveller-jt36.onrender.com/jewellery?_page=${page}&_limit=12${query && "&category="+query || "Rings"}`
       );
       let data = await res.json();
       setLoading(false);
@@ -37,48 +46,43 @@ function Product() {
     }
   };
 
-
-  if (loading) {
-    return <h2>Loading...</h2>;
+  if (Loading) {
+    return <Center p={"150px"}>
+      <Spinner
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='black.500'
+  size='xl'
+/>
+    </Center>;
   }
 
-  if (err) {
-    return <h2>Error...</h2>;
+  if (Err) {
+    return  toast({
+      title: `Try Again`,
+      status: "error",
+      isClosable: true,
+    });
   }
 
   const handclick = (val) => {
     setPage(page + val);
   };
-// if you get confict on this part then accept incoming change
-// ==========================================
-const addToBag = (product) => {
-  const bagData = JSON.parse(localStorage.getItem("bag")) || [];
-  const updatedBag = [...bagData, product];
-  localStorage.setItem("bag", JSON.stringify(updatedBag));
-};
-// ============================================
-
-
-  var stylesecondmaindiv = {
-    width: "100%",
-    padding: "20px",
-    backgroundColor: "green",
-    marginBottom: "25px",
-  };
 
   return (
-    <div style={{ marginBottom: "10%"}}>
+    <div style={{ paddingTop:"70px", paddingBottom:"70px"}}>
       <Grid
         textAlign={"left"}
         color={"#171616"}
         w="90%"
         m="auto"
         gap="4%"
-        pt={"70px"}
+        // pt={"70px"}
         justifyContent={"center"}
         templateColumns={"repeat(4,1fr)"}
       >
-        {data.map((ele) => (
+        {data.map((ele,i) => (
           // <Box
           //   textAlign="center"
           //   boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
@@ -107,44 +111,65 @@ const addToBag = (product) => {
           //     </Button>
           //   </ButtonGroup>
           // </Box>
-          <Box boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px" display={"flex"} p={"10px"} flexDir={"column"}  _hover={{ transform: "scale(1.02)", transition: "transform 0.4s" }} h={"320px"}>
-          <Image src={ele.avatar} w='200px' m={"auto"} />
-          <Flex justifyContent={"space-around"} alignItems={"center"}>
-            <Flex direction="column" gap="2%">
-            <Heading as="h6" size={"sm"} textAlign="left">{ele.brand}</Heading>
-          <Text  fontSize={"14px"} maxW={"130px"} textOverflow={"ellipsis"} overflow={"hidden"}>{ele.about}</Text>
-          <Text  fontSize={"14px"} color='gray'> ${ele.price}</Text>
+          <Box
+            boxShadow="rgba(149, 157, 165, 0.2) 0px 8px 24px"
+            display={"flex"}
+            p={"10px"}
+            flexDir={"column"}
+            _hover={{ transform: "scale(1.02)", transition: "transform 0.4s" }}
+            h={"320px"}
+            key={i}
+          >
+            <Image src={ele.avatar} w="200px" m={"auto"} />
+            <Flex justifyContent={"space-around"} alignItems={"center"}>
+              <Flex direction="column" gap="2%">
+                <Heading as="h6" size={"sm"} textAlign="left">
+                  {ele.brand}
+                </Heading>
+                <Text
+                  fontSize={"14px"}
+                  maxW={"130px"}
+                  textOverflow={"ellipsis"}
+                  overflow={"hidden"}
+                >
+                  {ele.about}
+                </Text>
+                <Text fontSize={"14px"} color="gray">
+                  {" "}
+                  ₹{ele.price}
+                </Text>
+              </Flex>
+              <Flex
+                direction="column"
+                justifyContent={"space-around"}
+                alignItems={"center"}
+                gap="10px"
+              >
+                <Button variant="link" color={"black"} fontSize={"15px"}>
+                  More Detail
+                </Button>
+                <Button
+                  color="white"
+                  bg="black"
+                  w={"60px"}
+                  _hover={{ color: "black", bg: "gray.100" }}
+                  fontSize={"15px"}
+                  p={"0"}
+                  onClick={()=>dispatch({type : ADD_CART , payload : ele})}
+                >
+                  ADD
+                </Button>
+              </Flex>
             </Flex>
-            <Flex direction="column" justifyContent={"space-around"} alignItems={"center"} gap="10px">
-              <Button  variant='link' color={"black"} fontSize={"15px"}>
-              More Detail
-            </Button>
-            {/*  if you get confict on this part then accept incoming change */}
-            <Button  onClick={() => addToBag(ele)} color='white' bg='black' w={"60px"} _hover={{color:"black",bg:"gray.100"}}  fontSize={"15px"} p={"0"}>
-              ADD
-            </Button>
-            {/* ====================================== */}
-            </Flex>
-          </Flex>
-          
-        </Box>
+          </Box>
         ))}
-
-        
       </Grid>
-      <ButtonGroup variant="outline" spacing="7"  mt="12%">
-        <Button
-          onClick={() => handclick(-1)}
-          disabled={page == 1}
-        >
+      <ButtonGroup variant="outline" spacing="7" mt="12%">
+        <Button onClick={() => handclick(-1)} isDisabled={page === 1}>
           Previous
         </Button>
         <p>{page}</p>
-        <Button
-          onClick={() => handclick(1)}
-        >
-          Next
-        </Button>
+        <Button onClick={() => handclick(1)}>Next</Button>
       </ButtonGroup>
     </div>
   );

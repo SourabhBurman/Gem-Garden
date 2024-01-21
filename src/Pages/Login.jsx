@@ -21,22 +21,25 @@ import {
 } from "@chakra-ui/react";
 // import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
+import image2 from "../Pics/photo-1617038260897-41a1f14a8ca0.avif"
+import { LOGIN } from "../Store/actiontype";
+import { loginFunc } from "../Store/action";
 // import { login } from "../Redux/Authentication/action";
 // import { login } from '../Redux/Authentication/action'
 
-export const Login = () => {
+export const Login = ({setLogsign}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [submissiondisbled, setSubmissiondisbled] = useState(false);
+  // const [token,setToken] = useState(false);
   const toast = useToast();
   const location = useLocation()
-  // const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
+  const { isAuth } = useSelector((store) => store)
   const [logindata, setLoginData] = useState({
     email: "",
     password: "",
   });
-
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -49,14 +52,41 @@ export const Login = () => {
         duration: 4000,
         isClosable: true,
       });
-      return;
+      // return;
     }
+    loginFunc(logindata).then(res=>{
+      res && dispatch({type:LOGIN}) && navigate("/");
+      // console.log(res);
+      if (res) {
+        toast({
+          title: "Success",
+          description: "User LoggedIn Successful",
+          status: "success",
+          position: "top",
+          duration: 4000,
+          isClosable: true
+        });
+      } else {
+        toast({
+          title: "Failed",
+          description: "Email and password mismatch",
+          status: "error",
+          position: "top",
+          duration: 4000,
+          isClosable: true,
+        });
+      }
 
-    // dispatch(login(logindata));
+
+      }
+       )
+      
+    // console.log(token) 
   };
 
   // useEffect(()=>{
   //   if (token) {
+  //     dispatch({type:LOGIN});
   //     toast({
   //       title: "Success",
   //       description: "User LoggedIn Successful",
@@ -65,25 +95,18 @@ export const Login = () => {
   //       duration: 4000,
   //       isClosable: true,
   //     });
-  //     localStorage.setItem("user-token",token)
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 4000);
-  //     setLoginData({email:"",password:""});
-  //     return;
-  //   } 
-  //   if(errMsg){
+  //   } else {
   //     toast({
   //       title: "Failed",
-  //       description: errMsg,
+  //       description: "Email and password mismatch",
   //       status: "error",
   //       position: "top",
   //       duration: 4000,
   //       isClosable: true,
   //     });
-  //     return
   //   }
-  // },[isAuth,token,errMsg])
+    
+  // },[token])
 
   return (
     <>
@@ -95,6 +118,11 @@ export const Login = () => {
           backgroundSize: "cover",
         }}
       >
+         <Stack align={"center"}>
+              <Heading color={"black"} fontSize={"2xl"} textAlign={"center"}>
+                  Login
+                </Heading>
+              </Stack>
         <form
           onSubmit={handleLogin}
           style={{
@@ -113,9 +141,10 @@ export const Login = () => {
               backgroundSize: "cover",
             }}
             align={"center"}
-            justify={"center"}
+            justify={"space-around"}
             bg={useColorModeValue("gray.50", "gray.800")}
           >
+             <Box w="30%" h="400px" borderRadius={"5px"} backgroundImage={image2} backgroundSize={"cover"} backgroundPosition={"center"}></Box>
             <Stack
               borderRadius={"none"}
               className="animate__animated animate__pulse"
@@ -128,11 +157,7 @@ export const Login = () => {
                 "2xl": "40%",
               }}
             >
-              <Stack align={"center"}>
-                <Heading color={"white"} fontSize={"4xl"} textAlign={"center"}>
-                  Login
-                </Heading>
-              </Stack>
+             
               <Box
                 rounded={"lg"}
                 bg={useColorModeValue("white", "gray.700")}
@@ -220,13 +245,13 @@ export const Login = () => {
                   <Stack pt={6}>
                     <Text align={"center"}>
                       Not registered?{" "}
-                      <Link
-                        href="/signup"
+                      <Button  variant='link'
+                        onClick={()=> setLogsign(true)}
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >
-                        Signup
-                      </Link>
+                        Sign Up
+                      </Button>
                     </Text>
                     <Text align={"center"}>
                       <Link

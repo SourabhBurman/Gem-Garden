@@ -7,13 +7,13 @@ import { Account } from "./Account";
 import { PrivateRoute } from "./PrivateRoute";
 import Product from "./Product";
 
-export const AllRoutes = () => {
+export const AllRoutes = ({query}) => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/contactUs" element={<ContactUs />} />
       <Route path="/account" element={<Account />} />
-      <Route path="/products" element={<Product />} />
+      <Route path="/products" element={<Product query={query}/>} />
       <Route element={<PrivateRoute />}>
         <Route path="/bag" element={<Bag />} />
       </Route>

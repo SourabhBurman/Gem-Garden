@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+Description :-
+Welcome to "GEM GARDEN," where elegance meets ease in the realm of designer jewelry. Immerse yourself in a seamless, visually enchanting experience powered by React and adorned with the chic sophistication of Chakra UI. Our curated collection, managed with Redux, promises an enchanting journey through timeless classics and contemporary masterpieces. With a dynamic JSON Server backend ensuring swift interactions, GEM GARDEN invites you to redefine elegance in just a few clicks. Discover the extraordinary – your premier destination for exquisite designer jewelry awaits.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Key Feature :-
 
-## Available Scripts
+1. "GEM GARDEN, where elegance meets React's sophistication."
+2. "Chakra UI enhances aesthetics, ensuring a stylish interface."
+3. "Redux orchestrates state seamlessly for consistent interactions."
+4. "JSON Server backend ensures swift, dynamic data handling."
+5. "A secure haven for exploring curated jewelry collections."
 
-In the project directory, you can run:
+<h1>Tech Stack Overview</h1>
+<hr>
+<h2>Frontend Technologies</h2>
+<hr>
+<h3>React.js:</h3>
+Our frontend is built using React.js, a powerful JavaScript library for constructing user interfaces. React's component-based architecture allows us to create modular and reusable UI components, fostering an efficient and maintainable development process.
 
-### `npm start`
+<h3>Chakra UI:</h3>
+Chakra UI is seamlessly integrated into our project, enhancing the styling and design aspects of our website. This component library for React empowers us to build beautiful and responsive user interfaces with minimal effort, ensuring a visually appealing and consistent user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>JavaScript (JS):</h3>
+JavaScript serves as the backbone of our frontend development, enabling dynamic and interactive features on our website. It plays a crucial role in providing a seamless and engaging user experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>Redux:</h3>
+To manage state efficiently across our application, we employ Redux. Redux facilitates the centralized management of state, ensuring a predictable and scalable architecture. This is particularly valuable as our application grows in complexity.
 
-### `npm test`
+<h3>Overall:</h3>
+The combination of React.js, Chakra UI, JavaScript, and Redux creates a robust and modern frontend stack. This tech synergy allows us to deliver a visually stunning, interactive, and scalable web application for our users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h1>Backend Technology</h1>
+<hr>
+<h2>RESTful API</h2>
+Our backend relies on a RESTful API (Representational State Transfer) to handle data requests and interactions with the database. This API follows REST principles, providing a standardized and scalable approach to building web services. It enables communication between the frontend and backend, allowing users to browse products, manage accounts, view their cart, and place orders seamlessly.
 
-### `npm run build`
+<h2>API Reference</h2>
+<hr>
+Get All Products
+  https://gem-gardern-mock-api.onrender.com/products
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <h3> Netlify Link</h3>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Team Members
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
 
-### `npm run eject`
+Sourav Burman
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Shyamgopal Biswas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Alipa
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Sachin Mohite
+Github :- https://github.com/sachin708
+LINKDIN :- https://www.linkedin.com/in/sachin-mohite-0893a7203/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deepak Wayzode
