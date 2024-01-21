@@ -45,19 +45,23 @@ Team Members
 <hr>
 
 Sourav Burman
+Github :- https://github.com/SourabhBurman
+Linkedin :- https://www.linkedin.com/in/sourabh-burman/
 
 Shyamgopal Biswas
-Github :- 
-LINKDIN :-
+Github :- https://github.com/S-G-Biswas
+Linkedin :- https://www.linkedin.com/in/shyamgopal-biswas-08ab44198/                            
 
 
 Alipa
 Github :- https://github.com/Alipakkr
-LINKDIN :- https://www.linkedin.com/in/alipa-55b365285/
+Linkedin :- https://www.linkedin.com/in/alipa-55b365285/
 
 
 Sachin Mohite
 Github :- https://github.com/sachin708
-LINKDIN :- https://www.linkedin.com/in/sachin-mohite-0893a7203/
+Linkedin :- https://www.linkedin.com/in/sachin-mohite-0893a7203/
 
 Deepak Wayzode
+Github :- https://github.com/Deepak9657568826
+Linkedin :- https://www.linkedin.com/in/deepak-wayzode-b06776188/
