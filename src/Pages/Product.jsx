@@ -37,6 +37,7 @@ function Product() {
     }
   };
 
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -48,6 +49,15 @@ function Product() {
   const handclick = (val) => {
     setPage(page + val);
   };
+// if you get confict on this part then accept incoming change
+// ==========================================
+const addToBag = (product) => {
+  const bagData = JSON.parse(localStorage.getItem("bag")) || [];
+  const updatedBag = [...bagData, product];
+  localStorage.setItem("bag", JSON.stringify(updatedBag));
+};
+// ============================================
+
 
   var stylesecondmaindiv = {
     width: "100%",
@@ -109,9 +119,11 @@ function Product() {
               <Button  variant='link' color={"black"} fontSize={"15px"}>
               More Detail
             </Button>
-            <Button color='white' bg='black' w={"60px"} _hover={{color:"black",bg:"gray.100"}}  fontSize={"15px"} p={"0"}>
+            {/*  if you get confict on this part then accept incoming change */}
+            <Button  onClick={() => addToBag(ele)} color='white' bg='black' w={"60px"} _hover={{color:"black",bg:"gray.100"}}  fontSize={"15px"} p={"0"}>
               ADD
             </Button>
+            {/* ====================================== */}
             </Flex>
           </Flex>
           
