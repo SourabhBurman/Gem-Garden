@@ -5,8 +5,12 @@
   }  */
  .con-main{
   background-color: #111315;
-  height: 100%;
-  
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
  }
  
  .sub{
@@ -22,7 +26,7 @@
     color: white;
     max-width: 400px;
     text-align: center;
-    margin-left: 480px;
+    /* margin-left: 480px; */
   }
   
   
@@ -37,13 +41,13 @@
     margin-top: 20px;
   } 
    input[type=text]{
-    color: white;
+    color: rgb(0, 0, 0);
   } 
   input , textarea{
     background-color: #1a1d1f;
     border:1px solid white;
     border-radius: 5px;
-    color: white;
+    /* color: white; */
   }
   button{
     border:1px solid white;
@@ -88,11 +92,11 @@
   }
   
   .submit-btn {
-    padding: 15px 50px;
+    padding: 5px 10px;
     border-radius: 10px;
     margin-bottom: 25px;
-    background-color:#008080;
-    color: white;
+    background-color:#dcdada;
+    color: rgb(37, 37, 37);
     /* margin-left: 375px; */
   }
   

@@ -4,6 +4,7 @@ import "./contact.css";
 import { useForm } from "react-hook-form";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useToast } from "@chakra-ui/react";
 
 export const ContactForm = () => {
 
@@ -50,12 +51,11 @@ export const ContactForm = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "colored",
         transition: Bounce,
         });
       
     } catch (e) {
-      console.error(e);
+      // console.error(e);
       // Display error alert
       // toggleAlert('Uh oh. Something went wrong.', 'danger');
     } finally {
@@ -69,16 +69,14 @@ export const ContactForm = () => {
     return (
       <>
         <div  className='con-main'>
-            <br />
-            <br />
-            <br />
+        <br />
             <br />
             <br />
             
          <h1 className='contact-head'>Contact Us</h1>
          <p className='para'>if you've got any questions, please fill out the short form below , we promise to get back to you in lightening speed. </p>
          <br />
-         <br />
+       
         </div> 
        <div className='ContactForm'>
         <div className='container'>

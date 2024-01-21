@@ -1,45 +1,11 @@
-import React from 'react'
-import { Container } from '@chakra-ui/react'
+import React, { useEffect } from 'react'
+import { Container, useDisclosure } from '@chakra-ui/react'
 import { Modal } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import styles from '../style/bagpage.module.css'
-
-// dummy data 
-const dummydata = [
-
-  {
-    "id": 2,
-    "name": "Jewelry",
-    "price": 3599,
-    "about": "Nova Ring",
-    "category": "Rings",
-    "brand": "Cartier",
-    "rating": 4.1,
-    "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Jewelry",
-    "price": 9091,
-    "about": "Sylvie Ring",
-    "category": "Rings",
-    "brand": "Grrard",
-    "rating": 5.2,
-    "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
-  },
-  {
-    "id": 4,
-    "name": "Jewelry",
-    "price": 6099,
-    "about": "Deanna Ring",
-    "category": "Rings",
-    "brand": "David Yurman",
-    "rating": 6.4,
-    "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/e/r/ersl0318-ov_yg_1.jpg"
-  }
-]
-
+import { useDispatch, useSelector } from 'react-redux';
+import { DELETE_CART } from '../Store/actiontype';
 
 export const Bag = () => {
   const userId = localStorage.getItem("userId")
@@ -49,29 +15,35 @@ export const Bag = () => {
   const [payment, setPayment] = useState('');
   const [cartEmpty, setCartEmpty] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+const dispatch = useDispatch();
+
+  const {cartArray} = useSelector(st=>st);
+// console.log(cartArray);
+useEffect(()=> {
+setAmt(cartArray.reduce((acc,curr)=> {
+  return acc+curr.price
+},0))
+},[cartArray])
   return (
     <div className={styles.cartandpaymentbox}>
-      <div className={styles.firstbox}>
-        {dummydata && dummydata.map((temp) => (
+      {/* <div className={styles.firstbox}>
+        {cartArray.length!=0 ? cartArray.map((temp) => (
           <div className={styles.cartbox}>
             <img className={styles.cartImage} src={temp.avatar} alt="" />
             <div className={styles.cartdetails}>
-              <strong>{temp.brand}</strong>
-              <p>{temp.about}</p>
-              <p>Rs : {temp.price}</p>
-              <button>Remove</button>
+              <strong style={{textAlign:"left"}}>Name : {temp.brand}</strong>
+              <p>About : {temp.about}</p>
+              <p>Price : ${temp.price}</p>
+              <button className={styles.buttonsEffect} onClick={()=>dispatch({type:DELETE_CART,payload:temp})}>Remove</button>
             </div>
           </div>
 
-        ))}
+        )) : <h1 style={{fontSize:"50px"}}>Cart is Empty</h1>}
       </div>
-      {/* =================================================== */}
-      {/* left section sholuld be here only  */}
-      {/* ===================================================================== */}
-
+  
       <div>
         <div className={styles.cardandPayment}>
-          {/* Content for the right section */}
+ 
 
           <div>
             <h3 className={styles.cardgiftHeading}>Gifting & Personalisation</h3>
@@ -117,7 +89,7 @@ export const Bag = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
     </div>
   )
