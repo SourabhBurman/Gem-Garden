@@ -32,18 +32,17 @@ export const Login = ({setLogsign}) => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [submissiondisbled, setSubmissiondisbled] = useState(false);
-  const [token,setToken] = useState(false);
+  // const [token,setToken] = useState(false);
   const toast = useToast();
   const location = useLocation()
-  // const { isAuth,errMsg,token } = useSelector((store) => store.authReducer)
+  const { isAuth } = useSelector((store) => store)
   const [logindata, setLoginData] = useState({
     email: "",
     password: "",
   });
-
   const handleLogin = (e) => {
     e.preventDefault();
-console.log("clicked")
+
     if (!logindata.email || !logindata.password){
       toast({
         title: "Failed!!",
@@ -56,36 +55,58 @@ console.log("clicked")
       // return;
     }
     loginFunc(logindata).then(res=>{
-       setToken(res)
+      res && dispatch({type:LOGIN}) && navigate("/");
       // console.log(res);
+      if (res) {
+        toast({
+          title: "Success",
+          description: "User LoggedIn Successful",
+          status: "success",
+          position: "top",
+          duration: 4000,
+          isClosable: true
+        });
+      } else {
+        toast({
+          title: "Failed",
+          description: "Email and password mismatch",
+          status: "error",
+          position: "top",
+          duration: 4000,
+          isClosable: true,
+        });
+      }
+
+
       }
        )
-    console.log(token) 
+      
+    // console.log(token) 
   };
 
-  useEffect(()=>{
-    if (token) {
-      dispatch({type:LOGIN});
-      toast({
-        title: "Success",
-        description: "User LoggedIn Successful",
-        status: "success",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: "Failed",
-        description: "Email and password mismatch",
-        status: "error",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-    }
+  // useEffect(()=>{
+  //   if (token) {
+  //     dispatch({type:LOGIN});
+  //     toast({
+  //       title: "Success",
+  //       description: "User LoggedIn Successful",
+  //       status: "success",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //   } else {
+  //     toast({
+  //       title: "Failed",
+  //       description: "Email and password mismatch",
+  //       status: "error",
+  //       position: "top",
+  //       duration: 4000,
+  //       isClosable: true,
+  //     });
+  //   }
     
-  },[token])
+  // },[token])
 
   return (
     <>
@@ -225,7 +246,7 @@ console.log("clicked")
                     <Text align={"center"}>
                       Not registered?{" "}
                       <Button  variant='link'
-                        onClick={()=> setLogsign(false)}
+                        onClick={()=> setLogsign(true)}
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >

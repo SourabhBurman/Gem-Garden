@@ -295,7 +295,7 @@ export const SignUp = ({setLogsign}) => {
                     <Text align={"center"}>
                       Already a user?{" "}
                       <Button  variant='link'
-                        onClick={()=> setLogsign(true)}
+                        onClick={()=> setLogsign(false)}
                         color={"rgb(255,189,89)"}
                         fontWeight={"600"}
                       >
