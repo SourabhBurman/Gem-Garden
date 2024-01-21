@@ -89,11 +89,11 @@
     justify-content: flex-start;
     align-items: center;
     /* background: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%); */
-    min-width: 60%;
+    width: 90%;
     min-height: 180px;
     /* height: 200px; */
     /* overflow: hidden; */
-    margin: 10px;
+    margin: 3%;
     border-radius: 20px;
     background-color: rgb(242, 242, 242);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -167,7 +167,7 @@
     background-color: black;
     text-align: center;
     /* border: 2px solid red; */
-    border-radius: 2px;
+    border-radius: 10px;
 }
 
 .bothpaymentandaddress {
@@ -187,7 +187,6 @@
    
     display: block;
     margin: 100px auto 0;
-    background-color: black;
     color: white;
     width: 40%;
     padding: 12px;
