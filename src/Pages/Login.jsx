@@ -142,16 +142,17 @@ export const Login = ({setLogsign}) => {
             }}
             align={"center"}
             justify={"space-around"}
+            flexDirection={{base : "column",md : "row"}}
             bg={useColorModeValue("gray.50", "gray.800")}
           >
-             <Box w="30%" h="400px" borderRadius={"5px"} backgroundImage={image2} backgroundSize={"cover"} backgroundPosition={"center"}></Box>
+             <Box w={{base : "60%", md:"40%"}} h="400px" borderRadius={"5px"} backgroundImage={image2} backgroundSize={"cover"} backgroundPosition={"center"}></Box>
             <Stack
               borderRadius={"none"}
               className="animate__animated animate__pulse"
               w={{
                 base: "90%",
-                sm: "90%",
-                md: "80%",
+                sm: "60%",
+                md: "50%",
                 lg: "50%",
                 xl: "40%",
                 "2xl": "40%",

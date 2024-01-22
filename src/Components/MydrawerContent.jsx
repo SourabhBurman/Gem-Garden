@@ -7,7 +7,7 @@ export const MydrawerContent = ({setQuery}) => {
     <HStack h='80%'>
         <Spacer />
          <VStack h='90%' spacing='10%'>
-      <Text fontSize='20px' fontWeight='bold'>Categories</Text>
+      <Text fontSize='20px' fontWeight='bold'  onClick={()=>setQuery("")}>Categories</Text>
     
  
   <Button colorScheme='black' variant='link' mt='10%' fontWeight='100' onClick={()=>setQuery("Rings")}>
@@ -19,8 +19,8 @@ export const MydrawerContent = ({setQuery}) => {
   <Button colorScheme='black' variant='link' fontWeight='100'  onClick={()=>setQuery("Earrning")}>
     Earrings 
   </Button>
-  <Button colorScheme='black' variant='link' fontWeight='100'  onClick={()=>setQuery("Necklaces & Pendants")}>
-    Necklaces & Pendants
+  <Button colorScheme='black' variant='link' fontWeight='100'  onClick={()=>setQuery("Accessories")}>
+  Accessories
   </Button>
   <Button colorScheme='black' variant='link' fontWeight='100'  onClick={()=>setQuery("Men's jewelry")}>
     Men's Jewellery

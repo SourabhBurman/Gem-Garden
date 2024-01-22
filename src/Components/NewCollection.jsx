@@ -13,7 +13,7 @@ export const NewCollection = () => {
         <Box m="30px">
             <Box w="88%" m="auto">
 
-                <Flex justifyContent={"space-between"} alignItems={"center"}>
+                <Flex justifyContent={"space-between"} alignItems={"center"} >
 
                     <Box textAlign={"left"} color={"#171616"} fontWeight={"400"}>
                         <Heading size={"lg"} fontWeight={"400"} textTransform={"uppercase"} color={"black"} Heading>New Collections</Heading>
@@ -28,24 +28,24 @@ export const NewCollection = () => {
             </Box>
         </Box>
 
-        <Grid  textAlign={"left"} color={"#171616"} w="90%" m="20px auto" gap="20px" justifyContent={"center"} templateColumns={"repeat(4,250px)"}>
+        <Grid  textAlign={"left"} color={"#171616"} w="90%" m={{base : "2% auto", md : "3% auto" , xl : "4% auto"}} gap="20px" justifyContent={"center"}  templateColumns={{base : "repeat(1,1fr)",md : "repeat(2,1fr)",lg : "repeat(3,1fr)",xl : "repeat(4,1fr)"}}>
       <Box boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px" _hover={{transform:"scale(1.05)",transition:"transform 0.4s"}} >
-        <Image src={img1} w='250px'/>
+        <Image src={img1} w='285px' m={"auto"}/>
         <Heading m="10px" as="h6" size={"sm"}>Messika</Heading>
         <Text m="10px" fontSize={"14px"}>Move Uno Collection</Text>
       </Box>
       <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px" _hover={{transform:"scale(1.05)",transition:"transform 0.4s"}} >
-        <Image src={img2} w='250px'/>
+        <Image src={img2} w='285px'/>
         <Heading m="10px" as="h6" size={"sm"}>Messika</Heading>
         <Text m="10px" fontSize={"14px"}>Lucky Move Collection</Text>
       </Box>
       <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px" _hover={{transform:"scale(1.05)",transition:"transform 0.4s"}} >
-        <Image src={img3} w='250px'/>
+        <Image src={img3} w='285px'/>
         <Heading m="10px" as="h6" size={"sm"}>Garrard</Heading>
         <Text m="10px" fontSize={"14px"}>1735 Collection</Text>
       </Box>
       <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px" _hover={{transform:"scale(1.05)",transition:"transform 0.4s"}} >
-        <Image src={img4} w='250px'/>
+        <Image src={img4} w='285px'/>
         <Heading m="10px" as="h6" size={"sm"}>Cartier</Heading>
         <Text m="10px" fontSize={"14px"}>Love Collection</Text>
       </Box>
