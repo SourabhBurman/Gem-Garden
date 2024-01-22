@@ -77,10 +77,11 @@ function Product({query}) {
         color={"#171616"}
         w="90%"
         m="auto"
-        gap="4%"
+        gap={{base : "2%", md : "3%" , xl : "4%"}}
         // pt={"70px"}
         justifyContent={"center"}
-        templateColumns={"repeat(4,1fr)"}
+        templateColumns={{base : "repeat(1,1fr)",md : "repeat(2,1fr)",lg : "repeat(3,1fr)",xl : "repeat(4,1fr)"}}
+        te
       >
         {data.map((ele,i) => (
           // <Box

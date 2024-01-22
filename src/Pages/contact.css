@@ -69,8 +69,11 @@
    .contactForm{ 
      background-color:black; 
      align-content: center;
-     width: 885px;
-     margin-left: 200px;
+     /* width: 885px; */
+     width:70%;
+     /* border: solid; */
+     /* margin-left: 200px; */
+     margin: auto;
      border-radius: 10px;
   } 
   .contact-name{
@@ -81,6 +84,7 @@
   }
    .message{
     width: 840px;
+    /* width : 80%; */
     height: 100px;
   } 
   

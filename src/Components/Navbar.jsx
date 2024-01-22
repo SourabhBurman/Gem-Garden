@@ -44,12 +44,13 @@ export const Navbar = ({setQuery}) => {
     <>
       <Flex
         justify="space-around"
+        flexDirection={{base : "column" , md:"row" , lg : "row" , xl : "row"}}
         alignItems="center"
         zIndex={"2"}
         p="4"
-        pl="20"
-        pr="20"
-        h="10vh"
+        pl="60px"
+        pr="60px"
+        h={{base : "35vh" , md:"10vh" , lg : "10vh" , xl : "10vh"}}
         w="100%"
         className={styles.navbaronly}
       >
